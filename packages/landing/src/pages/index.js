@@ -1,66 +1,90 @@
-import React, { Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Sticky from 'react-stickynode';
 import { ThemeProvider } from 'styled-components';
-import { agencyTheme } from 'common/theme/agency';
+import Sticky from 'react-stickynode';
+import { appTheme } from 'common/theme/app';
+import {
+  GlobalStyle,
+  AppWrapper,
+  ConditionWrapper,
+} from 'containers/App/app.style';
 import ResetCSS from 'common/assets/css/style';
-import { GlobalStyle, AgencyWrapper } from 'containers/Agency/agency.style';
-import Navbar from 'containers/Agency/Navbar';
-import BannerSection from 'containers/Agency/BannerSection';
-import FeatureSection from 'containers/Agency/FeatureSection';
-import AboutUsSection from 'containers/Agency/AboutUsSection';
-import WorkHistory from 'containers/Agency/WorkHistory';
-import BlogSection from 'containers/Agency/BlogSection';
-import TestimonialSection from 'containers/Agency/TestimonialSection';
-import TeamSection from 'containers/Agency/TeamSection';
-import VideoSection from 'containers/Agency/VideoSection';
-import NewsletterSection from 'containers/Agency/NewsletterSection';
-import QualitySection from 'containers/Agency/QualitySection';
-import Footer from 'containers/Agency/Footer';
+import Navbar from 'containers/App/Navbar';
+import DomainSection from 'containers/App/Banner';
+import FeatureSection from 'containers/App/FeatureSection';
+import ControlSection from 'containers/App/Control';
+import TestimonialSection from 'containers/App/Testimonial';
+import PartnerHistory from 'containers/App/PartnerHistory';
+import PaymentSection from 'containers/App/PaymentSection';
+import Footer from 'containers/App/Footer';
+import FeatureSlider from 'containers/App/FeatureSlider';
+import FeatureSliderTwo from 'containers/App/FeatureSliderTwo';
 import { DrawerProvider } from 'common/contexts/DrawerContext';
-import FaqSection from 'containers/Agency/FaqSection';
 
-const Main = () => {
+function getSize() {
+  return {
+    innerHeight: window.innerHeight,
+    innerWidth: window.innerWidth,
+    outerHeight: window.outerHeight,
+    outerWidth: window.outerWidth,
+  };
+}
+
+function useWindowSize() {
+  let [windowSize, setWindowSize] = useState(getSize());
+
+  function handleResize() {
+    setWindowSize(getSize());
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return windowSize;
+}
+
+const App = () => {
+  const size = process.browser && useWindowSize();
   return (
-    <ThemeProvider theme={agencyTheme}>
-      <Fragment>
-        {/* Start agency head section */}
+    <ThemeProvider theme={appTheme}>
+      <>
         <Head>
-          <title>Agency | A react next landing page</title>
-          <meta name="theme-color" content="#10ac84" />
+          <title>App | A react next landing page</title>
           <meta name="Description" content="React next landing page" />
-          {/* Load google fonts */}
+          <meta name="theme-color" content="#ec5555" />
           <link
-            href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
             rel="stylesheet"
           />
         </Head>
+
         <ResetCSS />
         <GlobalStyle />
-        {/* End of agency head section */}
-        {/* Start agency wrapper section */}
-        <AgencyWrapper>
+
+        <AppWrapper>
           <Sticky top={0} innerZ={9999} activeClass="sticky-nav-active">
             <DrawerProvider>
               <Navbar />
             </DrawerProvider>
           </Sticky>
-          <BannerSection />
+          <DomainSection />
           <FeatureSection />
-          <AboutUsSection />
-          <WorkHistory />
-          <BlogSection />
-          <QualitySection />
-          <VideoSection />
+          <ControlSection />
+          <ConditionWrapper id="keyfeature">
+            {size.innerWidth > 1100 ? <FeatureSlider /> : <FeatureSliderTwo />}
+          </ConditionWrapper>
+          <PartnerHistory />
+          <PaymentSection />
           <TestimonialSection />
-          <TeamSection />
-          <FaqSection />
-          <NewsletterSection />
           <Footer />
-        </AgencyWrapper>
-        {/* End of agency wrapper section */}
-      </Fragment>
+        </AppWrapper>
+      </>
     </ThemeProvider>
   );
 };
-export default Main;
+export default App;
