@@ -31,58 +31,105 @@ export const ButtonWrapper = styled.div`
     }
   }
 `;
-export const EmailInputWrapper = styled.div`
-  position: relative;
-  width: 85%;
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 
+export const EmailWrapper = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0px 7px 25px 0px rgba(22, 53, 76, 0.08) !important;
+  @media (max-width: 1566px) {
+    max-width: 430px;
+  }
+  @media (max-width: 1200px) {
+    max-width: 430px;
+  }
+  @media (max-width: 480px) {
+    margin-top: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
   &::before {
     content: url(${Mail?.src});
     display: block;
     position: relative;
     width: 22px;
     left: 22px;
-    top: 46px;
+    top: 18px;
     z-index: 9;
   }
-  input {
-    border-radius: 5px;
+  .input-email {
+    width: 100%;
+    max-width: 480px;
+    max-height: 70px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 7px 25px 0px rgba(22, 53, 76, 0.08) !important;
-    border: 0 !important;
-    margin-bottom: 30px;
-    height: 60px;
-    padding-left: 60px !important;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: -0.3px;
+    position: absolute;
     color: #343d48;
-    opacity: 1;
-    font-weight: 500;
-    @media (max-width: 768px) {
+    padding-left: 60px;
+    padding-right: 80px;
+    transition: all 500ms ease;
+    @media (max-width: 1550px) {
+      height: 60px;
+      max-width: 430px;
+      padding-right: 70px;
     }
-    &:focus {
-      border: 0;
-      box-shadow: 0px 7px 25px 0px rgba(22, 53, 76, 0.08);
+    @media (max-width: 1199px) {
+      max-width: 400px;
     }
-
-    &:placeholder {
-      font-size: 16px;
+    &::placeholder {
       color: #343d48;
       opacity: 1;
+      max-width: 161px;
+      max-height: 19px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: -0.3px;
+    }
+    &:focus {
+      box-shadow: 0 0 0 1px #aaa;
     }
   }
-  .input-icon {
-    left: 10px !important;
-    right: auto;
-    top: 7px !important;
-    height: 46px !important;
-    svg {
-      color: #ececec;
-      width: 24px;
-      height: 30px;
+  .input-button {
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 70px;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #1a73e8;
+    color: #white;
+    position: absolute;
+    right: 0;
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 500ms ease;
+    &:hover {
+      opacity: 0.85;
+    }
+    @media (max-width: 1550px) {
+      height: 60px;
+      width: 70px;
     }
   }
-`;
+`
+
 
 export const DiscountLabel = styled.div`
   font-family: 'Open Sans', sans-serif;
@@ -114,3 +161,76 @@ export const DiscountLabel = styled.div`
     }
   }
 `;
+
+export const DownloadButtonWrapper = styled.section`
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  .download-button {
+    background-color: #fff;
+    border: 1px solid #081c27;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 17px;
+    padding-right: 17px;
+    text-align: left;
+    color: #081c27;
+    padding-top: 14.5px;
+    padding-bottom: 14.5px;
+    transition: all 500ms ease;
+    @media (max-width: 1024px) {
+      padding-left: 17px;
+      padding-right: 17px;
+    }
+    @media (max-width: 480px) {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    &:hover {
+      opacity: 0.85;
+      cursor: pointer;
+      img {
+        filter: invert(20%);
+      }
+    }
+    /* + .download-button {
+      margin-left: 16px;
+      @media (max-width: 414px) {
+        margin-left: 10px;
+      } */
+  }
+  .download-button-icon {
+    flex-shrink: 0;
+    filter: invert(0%);
+    transition: 500ms ease;
+  }
+  .download-button-content {
+    margin-left: 17px;
+    @media (max-width: 480px) {
+      margin-left: 0px;
+    }
+    @media (max-width: 414px) {
+      margin-left: 0px;
+    }
+  }
+  .download-button-content-text {
+    margin: 0;
+    display: block;
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: 0.2px;
+    opacity: 0.8;
+  }
+  .download-button-content-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    margin-top: 5px;
+    @media (max-width: 480px) {
+      font-size: 16px;
+    }
+  }
+`

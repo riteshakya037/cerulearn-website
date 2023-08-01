@@ -35,19 +35,16 @@
       "image": "../../assets/image/app/2.svg",
       "title": "Customer Support"
     },
-
     {
       "id": 4,
       "image": "../../assets/image/app/3.svg",
       "title": "100% Response Time"
     },
-
     {
       "id": 5,
       "image": "../../assets/image/app/4.svg",
       "title": "Maintaining Milestones"
     },
-
     {
       "id": 6,
       "image": "../../assets/image/app/5.svg",
@@ -220,21 +217,18 @@
       "name": "Roman Ul Oman",
       "designation": "Co-founder of QatarDiaries"
     },
-
     {
       "id": 3,
       "description": "I have bought more than 10 themes on ThemeForest, and this is the first one I review. Wow! Amazing React Theme",
       "name": "Jeny Doe",
       "designation": "Director of Beauty-queen"
     },
-
     {
       "id": 4,
       "description": "Really, really well made! Love that each component is handmade and customised. Great Work",
       "name": "Jeny Doe",
       "designation": "Co-founder of Softo"
     },
-
     {
       "id": 5,
       "description": "It written well. The author has a firm understanding of React and other technologies. It been consistently updated. Great product. Thank you.",

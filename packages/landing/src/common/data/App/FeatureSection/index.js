@@ -1,24 +1,26 @@
 const data = {
+  slogan: "",
+  title: "Featured Services that Set Us Apart",
   features: [
     {
       id: 1,
       icon: 'flaticon-atom',
-      title: 'App Development',
+      title: 'Personalized Student Progress',
       description:
-        'If you have to develop a mobile app, this is the most appropriate time. ',
+        'Tailored learning journeys with AI-driven analytics for academic growth and success.',
     },
     {
       id: 2,
       icon: 'flaticon-trophy',
-      title: 'UI/UX Design',
+      title: 'Empowering Teachers',
       description:
-        'We provide the best UI/UX Design by following the latest trends of the market.',
+        'Dynamic teaching experience with interactive whiteboards and AI integration.',
     },
     {
       id: 3,
       icon: 'flaticon-conversation',
-      title: 'Wireframing Task',
-      description: ' We respect our customer opinions and deals with them. ',
+      title: 'Strengthening the Parent-School Partnership',
+      description: 'A powerful app for parents to stay informed and engaged in their child\'s education.',
     },
   ],
 };

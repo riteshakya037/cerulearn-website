@@ -4,22 +4,19 @@ import Link from 'next/link';
 import Box from 'common/components/Box';
 import Text from 'common/components/Text';
 import Heading from 'common/components/Heading';
-import Button from 'common/components/Button';
 import NextImage from 'common/components/NextImage';
-import Input from 'common/components/Input';
 import FeatureBlock from 'common/components/FeatureBlock';
 import ParticlesComponent from '../particles';
 import Container from 'common/components/UI/Container';
-import { Icon } from 'react-icons-kit';
-import { ic_arrow_forward } from 'react-icons-kit/md/ic_arrow_forward';
+import arrowIcon from 'common/assets/image/app/banner-arrow.svg'
 import { BannerSquareShape, BannerCircleShape } from '../app.style';
-import BannerWrapper, {
+import {
   DiscountWrapper,
   DiscountLabel,
-  ButtonWrapper,
-  EmailInputWrapper,
+  DownloadButtonWrapper,
+  EmailWrapper,
 } from './banner.style';
-
+import { BANNER_DATA } from 'common/data/App/Banner'
 import AppScreenshot from 'common/assets/image/app/mobile.png';
 
 const DomainSection = ({
@@ -28,14 +25,13 @@ const DomainSection = ({
   col,
   title,
   description,
-  button,
   image,
   imageArea,
-  btnStyle,
-  btnStyleTwo,
   discountAmount,
   discountText,
 }) => {
+  const { sectionImage, screenImage, tagLine, buttons } =
+    BANNER_DATA
   return (
     <Box {...SectionWrapper}>
       <ParticlesComponent />
@@ -56,31 +52,44 @@ const DomainSection = ({
               title={<Heading {...title} />}
               description={<Text {...description} />}
             />
-            <EmailInputWrapper>
-              <Input
-                inputType="email"
-                placeholder="Enter Email Address"
-                iconPosition="left"
-                aria-label="email"
+            <EmailWrapper>
+              <input
+                type='text'
+                placeholder='Enter Email address..'
+                className='input-email'
               />
-            </EmailInputWrapper>
-            <ButtonWrapper>
-              <Link href="#services">
-                <a>
-                  <Button {...button} {...btnStyle} />
-                </a>
-              </Link>
-              <Link href="#">
-                <a>
-                  <Button
-                    {...button}
-                    {...btnStyleTwo}
-                    icon={<Icon icon={ic_arrow_forward} />}
-                    className="withoutBg"
-                  />
-                </a>
-              </Link>
-            </ButtonWrapper>
+              <button className='input-button'>
+                <img src={arrowIcon?.src} alt='banner button' />
+              </button>
+            </EmailWrapper>
+            <Text as='p' className='tagLine' content={tagLine} />
+            <DownloadButtonWrapper>
+              {buttons.map((button, index) => (
+                <Link href='/' key={`banner-button-${index}`}>
+                  <section className='download-button'>
+                    <img
+                      src={button?.icon?.src}
+                      width='30'
+                      height='30'
+                      alt={button?.title}
+                      className='download-button-icon'
+                    />
+                    <Box className='download-button-content'>
+                      <Text
+                        as='span'
+                        content={button?.text}
+                        className='download-button-content-text'
+                      />
+                      <Text
+                        as='p'
+                        content={button?.title}
+                        className='download-button-content-title'
+                      />
+                    </Box>
+                  </section>
+                </Link>
+              ))}
+            </DownloadButtonWrapper>
           </Box>
           <Box {...col} {...imageArea}>
             <NextImage src={AppScreenshot} alt="Domain Image" {...image} />
@@ -132,7 +141,7 @@ DomainSection.defaultProps = {
     ml: 'auto',
   },
   title: {
-    content: 'Essential Mobile  App Landing for  Workspaces',
+    content: BANNER_DATA.slogan,
     fontSize: ['26px', '30px', '30px', '48px', '60px'],
     fontWeight: '300',
     color: '#0f2137',
@@ -140,42 +149,15 @@ DomainSection.defaultProps = {
     mb: '20px',
   },
   description: {
-    content:
-      'A mobile app landing page is important and  essential for right amount of information about your product. Start increasing your user base upon the launch of your product.',
+    content: BANNER_DATA.title,
     fontSize: '16px',
     color: '#343d48',
     lineHeight: '33px',
     mb: '10px',
   },
-  button: {
-    title: 'EXPLORE MORE',
-    type: 'button',
-    fontSize: '14px',
-    fontWeight: '600',
-    color: '#fff',
-    borderRadius: '4px',
-    pl: '22px',
-    pr: '22px',
-    colors: 'primaryWithBg',
-  },
   image: {
     ml: 'auto',
     mt: '70px',
-  },
-  btnStyle: {
-    minWidth: '156px',
-    fontSize: '14px',
-    fontWeight: '500',
-  },
-  btnStyleTwo: {
-    title: 'WATCH DEMOS',
-    type: 'button',
-    minWidth: '156px',
-    fontSize: '14px',
-    fontWeight: '500',
-    ml: '15px',
-    bg: '#fff',
-    color: 'rgb(26, 115, 232)',
   },
   textArea: {
     width: ['100%', '100%', '50%', '55%', '55%'],
@@ -191,7 +173,7 @@ DomainSection.defaultProps = {
     bg: 'rgb(26, 115, 232)',
   },
   discountText: {
-    content: 'Version 2.5.0 has just released .',
+    content: BANNER_DATA.update,
     fontSize: '13px',
     fontWeight: '400',
     color: '#0f2137',

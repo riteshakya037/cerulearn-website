@@ -20,6 +20,7 @@ import Footer from 'containers/App/Footer';
 import FeatureSlider from 'containers/App/FeatureSlider';
 import FeatureSliderTwo from 'containers/App/FeatureSliderTwo';
 import { DrawerProvider } from 'common/contexts/DrawerContext';
+import Faq from 'containers/App/Faq'
 
 function getSize() {
   return {
@@ -81,6 +82,7 @@ const App = () => {
           <PartnerHistory />
           <PaymentSection />
           <TestimonialSection />
+          <Faq />
           <Footer />
         </AppWrapper>
       </>
