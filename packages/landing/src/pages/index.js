@@ -56,9 +56,9 @@ const App = () => {
     <ThemeProvider theme={appTheme}>
       <>
         <Head>
-          <title>App | A react next landing page</title>
-          <meta name="Description" content="React next landing page" />
-          <meta name="theme-color" content="#ec5555" />
+          <title>Cerulearn | Experience the Future of Education</title>
+          <meta name="Description" content="Cerulearn - Your Comprehensive Educational Super App with AI-Powered Personalization, Interactive Tutoring, and Seamless Institution Integration. Revolutionizing Education for Students, Teachers, and Parents." />
+          <meta name="theme-color" content="#1A73E8" />
           <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
             rel="stylesheet"
