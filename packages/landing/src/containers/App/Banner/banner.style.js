@@ -59,8 +59,13 @@ export const EmailWrapper = styled.section`
     position: relative;
     width: 22px;
     left: 22px;
-    top: 18px;
+    top: 24px;
     z-index: 9;
+  }
+  @media (max-width: 1566px) {
+    &::before {
+      top: 18px;
+    }
   }
   .input-email {
     width: 100%;

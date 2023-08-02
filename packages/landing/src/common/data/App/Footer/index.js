@@ -1,3 +1,11 @@
+import footerLogo from 'common/assets/image/app/logo.png';
+
+import footerLinkedIn from 'common/assets/image/app/footer/footer-linkedin.svg';
+import footerFacebook from 'common/assets/image/app/footer/footer-facebook.svg';
+import footerTwitter from 'common/assets/image/app/footer/footer-twitter.svg';
+import footerInstagram from 'common/assets/image/app/footer/footer-instagram.svg';
+import footerTiktok from 'common/assets/image/app/footer/footer-tiktok.svg';
+
 const data = {
   menuWidget: [
     {
@@ -118,6 +126,47 @@ const data = {
           text: 'Responsible supply chain',
         },
       ],
+    },
+  ],
+  menu: [
+    {
+      link: '#',
+      label: 'Support',
+    },
+    {
+      link: '#',
+      label: 'About Us',
+    },
+    {
+      link: '#',
+      label: 'Privacy',
+    },
+    {
+      link: '#',
+      label: 'Contact',
+    },
+  ],
+  logo: footerLogo,
+  social: [
+    {
+      link: '#',
+      icon: footerFacebook,
+    },
+    {
+      link: '#',
+      icon: footerInstagram,
+    },
+    {
+      link: '#',
+      icon: footerTiktok,
+    },
+    {
+      link: '#',
+      icon: footerTwitter,
+    },
+    {
+      link: '#',
+      icon: footerLinkedIn,
     },
   ],
 };

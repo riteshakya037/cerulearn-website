@@ -10,6 +10,7 @@ import { Container } from './navbar.style';
 import { openModal, closeModal } from '@redq/reuse-modal';
 import SearchPanel from '../SearchPanel';
 import LoginModal from '../LoginModal';
+import Link from 'next/link';
 
 import LogoImage from 'common/assets/image/app/logo.png';
 
@@ -34,7 +35,7 @@ const CloseModalButtonAlt = () => (
     icon={<i className="flaticon-plus-symbol" />}
   />
 );
-const Navbar = ({ navbarStyle, logoStyle, buttonStyle }) => {
+const Navbar = ({ navbarStyle, logoStyle, button, btnStyle }) => {
   const { state, dispatch } = useContext(DrawerContext);
   // Search modal handler
   const handleSearchModal = () => {
@@ -97,18 +98,11 @@ const Navbar = ({ navbarStyle, logoStyle, buttonStyle }) => {
           logoStyle={logoStyle}
         />
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Button
-            variant="textButton"
-            onClick={handleSearchModal}
-            icon={<i className="flaticon-magnifying-glass" />}
-            aria-label="search"
-          />
-          <Button
-            variant="textButton"
-            onClick={handleLoginModal}
-            icon={<i className="flaticon-user" />}
-            aria-label="login"
-          />
+          <Link href="#">
+            <a>
+              <Button {...button} {...btnStyle} title="Login Now" />
+            </a>
+          </Link>
           <Drawer
             width="420px"
             placement="right"
@@ -132,8 +126,8 @@ const Navbar = ({ navbarStyle, logoStyle, buttonStyle }) => {
 Navbar.propTypes = {
   navbarStyle: PropTypes.object,
   logoStyle: PropTypes.object,
-  buttonStyle: PropTypes.object,
-  wrapperStyle2: PropTypes.object,
+  button: PropTypes.object,
+  btnStyle: PropTypes.object,
 };
 
 Navbar.defaultProps = {
@@ -143,9 +137,20 @@ Navbar.defaultProps = {
   logoStyle: {
     width: ['100px', '140px'],
   },
-  buttonStyle: {
-    minHeight: '70px',
+  button: {
+    type: 'button',
+    fontSize: '14px',
+    fontWeight: '600',
     color: '#fff',
+    borderRadius: '4px',
+    pl: '22px',
+    pr: '22px',
+    colors: 'primaryWithBg',
+  },
+  btnStyle: {
+    minWidth: '156px',
+    fontSize: '14px',
+    fontWeight: '500',
   },
 };
 

@@ -16,7 +16,8 @@ import ControlSection from 'containers/App/Control';
 import TestimonialSection from 'containers/App/Testimonial';
 import PartnerHistory from 'containers/App/PartnerHistory';
 import PaymentSection from 'containers/App/PaymentSection';
-import Footer from 'containers/App/Footer';
+import Footer from 'containers/App/FooterMinimal';
+import CallToAction from 'containers/App/CallToAction';
 import FeatureSlider from 'containers/App/FeatureSlider';
 import FeatureSliderTwo from 'containers/App/FeatureSliderTwo';
 import { DrawerProvider } from 'common/contexts/DrawerContext';
@@ -83,6 +84,7 @@ const App = () => {
           <PaymentSection />
           <TestimonialSection />
           <Faq />
+          <CallToAction />
           <Footer />
         </AppWrapper>
       </>
