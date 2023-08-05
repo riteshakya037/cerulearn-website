@@ -116,8 +116,8 @@ DomainSection.propTypes = {
 DomainSection.defaultProps = {
   SectionWrapper: {
     as: 'section',
-    pt: '80px',
-    pb: '80px',
+    pt: '40px',
+    pb: '40px',
     overflow: 'hidden',
   },
   row: {

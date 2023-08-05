@@ -214,7 +214,6 @@ const AppWrapper = styled.div`
     transition: all 0.3s ease;
 
     .reusecore__button {
-      margin-right: 15px;
       .btn-icon {
         color: ${themeGet('colors.white', '#ffffff')};
         font-size: 18px;
@@ -226,9 +225,8 @@ const AppWrapper = styled.div`
         }
       }
       &:hover {
-        box-shadow: 0px 9px 20px -5px rgba(26, 115, 232, 0.57);
-        background-color: rgb(26, 115, 232);
-        cursor: pointer;
+        background: transparent;
+        box-shadow: none;
       }
     }
     .button__wrapper {
@@ -254,7 +252,7 @@ const AppWrapper = styled.div`
     .reusecore__navbar {
       background-color: ${themeGet('colors.white', '#ffffff')};
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      padding: 15px 15px;
+      padding: 5px 15px;
       transition: all 0.2s ease;
       @media (max-width: 1100px) {
         padding: 10px 15px 10px;
@@ -270,7 +268,6 @@ const AppWrapper = styled.div`
       }
 
       .reusecore__button {
-        margin-right: 15px;
         .btn-icon {
           color: ${themeGet('colors.primary', '#1a73e8')};
         }

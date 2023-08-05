@@ -171,7 +171,7 @@ export const DownloadButtonWrapper = styled.section`
   margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 20px;
+  gap: 10px 10px;
   .download-button {
     background-color: #fff;
     border: 1px solid #081c27;

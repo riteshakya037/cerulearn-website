@@ -100,7 +100,11 @@ const Navbar = ({ navbarStyle, logoStyle, button, btnStyle }) => {
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Link href="#">
             <a>
-              <Button {...button} {...btnStyle} title="Login Now" />
+              <Button
+                variant="textButton"
+                icon={<i className="flaticon-user" />}
+                aria-label="login"
+              />
             </a>
           </Link>
           <Drawer
@@ -135,7 +139,7 @@ Navbar.defaultProps = {
     minHeight: '70px',
   },
   logoStyle: {
-    width: ['100px', '140px'],
+    width: '60px',
   },
   button: {
     type: 'button',
