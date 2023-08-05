@@ -51,17 +51,17 @@ const ControlSection = ({
       <Container>
         <Box {...row} {...textAreaRow}>
           <Box {...col} {...textArea}>
-            <Text content="EASY DEPLOYMENT" {...sectionSubTitle} />
+            <Text content="CERULEARN APP" {...sectionSubTitle} />
             <FeatureBlock
               title={
                 <Heading
-                  content="Deploy your site with simple commands"
+                  content="Seamless Learning at Your Fingertips"
                   {...title}
                 />
               }
               description={
                 <Text
-                  content="You can deploy your site with firebase or Now.sh with some simple process. The deployment is made easy for our customers and according to their needs."
+                  content="The Cerulearn app offers a seamless learning experience for students and parents. Access all necessary information for effective learning, from online classes to assignments. Parents can effortlessly stay informed about their child's academic journey. With a user-friendly interface, learning becomes efficient and engaging on-the-go."
                   {...description}
                 />
               }

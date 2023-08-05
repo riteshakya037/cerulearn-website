@@ -10,35 +10,35 @@ const data = {
     {
       id: 1,
       image: Icon1,
-      title: 'Super Performance',
+      title: 'AI Integrations',
     },
     {
       id: 2,
       image: Icon2,
-      title: 'Search Optimization',
+      title: 'Events and Newsfeeds',
     },
     {
       id: 3,
       image: Icon3,
-      title: 'Customer Support',
+      title: 'Personalized Tutoring',
     },
 
     {
       id: 4,
       image: Icon4,
-      title: '100% Response Time',
+      title: 'Tutor Personas',
     },
 
     {
       id: 5,
       image: Icon5,
-      title: 'Maintaining Milestones',
+      title: 'Personalized Tutoring',
     },
 
     {
       id: 6,
       image: Icon6,
-      title: 'Organised Code',
+      title: 'Interactive Whiteboard',
     },
   ],
 };

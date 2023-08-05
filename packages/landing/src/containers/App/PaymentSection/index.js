@@ -59,17 +59,17 @@ const PaymentSection = ({
       <Container>
         <Box {...row} {...textAreaRow}>
           <Box {...col} {...textArea}>
-            <Text content="PAYMENT SECURITY" {...sectionSubTitle} />
+            <Text content="CERULYTICS DASHBOARD" {...sectionSubTitle} />
             <FeatureBlock
               title={
                 <Heading
-                  content="Secure Payment and Transaction System With #1 ranking"
+                  content="Empowering Institutions with Marketing Insights"
                   {...title}
                 />
               }
               description={
                 <Text
-                  content="Security of our customer is our basic priority and we are best at it . So no need to worry about online payment and Transaction System ."
+                  content="Our Cerulytics Dashboard is a fast, secure, and user-friendly platform that provides educational institutions with valuable marketing insights. With cloud-based technology and comprehensive analytics, institutions gain deep insights into marketing campaigns, student engagement, and user behavior. Make informed decisions and optimize marketing strategies effortlessly with our intuitive dashboard."
                   {...description}
                 />
               }

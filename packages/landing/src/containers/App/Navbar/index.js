@@ -98,8 +98,8 @@ const Navbar = ({ navbarStyle, logoStyle, button, btnStyle }) => {
           logoStyle={logoStyle}
         />
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Link href="#">
-            <a>
+          <Link href="https://app.ceruai.com" >
+            <a target="_blank" rel="noopener noreferrer">
               <Button
                 variant="textButton"
                 icon={<i className="flaticon-user" />}
