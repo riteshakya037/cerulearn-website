@@ -22,10 +22,9 @@ import FeatureSlider from 'containers/App/FeatureSlider';
 import FeatureSliderTwo from 'containers/App/FeatureSliderTwo';
 import { DrawerProvider } from 'common/contexts/DrawerContext';
 import Faq from 'containers/App/Faq'
-import { useWindowSize } from 'common/contexts/SizeContext'
+import { withInnerWidth } from 'common/contexts/SizeContext'
 
-const App = () => {
-  const size = process.browser && useWindowSize();
+const App = ({ size }) => {
   return (
     <ThemeProvider theme={appTheme}>
       <>
@@ -65,4 +64,7 @@ const App = () => {
     </ThemeProvider>
   );
 };
-export default App;
+
+const AppWithInnerWidth = withInnerWidth(App);
+
+export default AppWithInnerWidth;

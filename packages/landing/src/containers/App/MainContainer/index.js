@@ -12,11 +12,9 @@ import Navbar from 'containers/App/Navbar';
 import Footer from 'containers/App/FooterMinimal';
 import { DrawerProvider } from 'common/contexts/DrawerContext';
 import ParticlesComponent from 'containers/App/particles';
-import { useWindowSize } from 'common/contexts/SizeContext'
+import { withInnerWidth } from 'common/contexts/SizeContext'
 
-const MainContainer = ({ children }) => {
-
-    const size = process.browser && useWindowSize();
+const MainContainer = ({ children, size }) => {
     const isThickerFooter = size.innerWidth < 991;
 
     return <ThemeProvider theme={appTheme}>
@@ -57,4 +55,7 @@ const MainContainer = ({ children }) => {
         </>
     </ThemeProvider>
 };
-export default MainContainer;
+
+const MainContainerWithInnerWidth = withInnerWidth(MainContainer);
+
+export default MainContainerWithInnerWidth;

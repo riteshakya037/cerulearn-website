@@ -11,10 +11,10 @@ import { openModal, closeModal } from '@redq/reuse-modal';
 import SearchPanel from '../SearchPanel';
 import LoginModal from '../LoginModal';
 import Link from 'next/link';
-import { useWindowSize } from 'common/contexts/SizeContext'
+import { withInnerWidth } from 'common/contexts/SizeContext'
 
 import LogoImage from 'common/assets/image/app/logo.svg';
-import LogoTextImage from 'common/assets/image/app/logo_text_alt.svg';
+import LogoTextImage from 'common/assets/image/app/logo_text.svg';
 
 import { DrawerContext } from 'common/contexts/DrawerContext';
 
@@ -37,7 +37,7 @@ const CloseModalButtonAlt = () => (
     icon={<i className="flaticon-plus-symbol" />}
   />
 );
-const Navbar = ({ navbarStyle, logoStyle, showIcons, }) => {
+const Navbar = ({ navbarStyle, logoStyle, showIcons, size }) => {
   const { state, dispatch } = useContext(DrawerContext);
   // Search modal handler
   const handleSearchModal = () => {
@@ -90,7 +90,6 @@ const Navbar = ({ navbarStyle, logoStyle, showIcons, }) => {
     });
   };
 
-  const size = process.browser && useWindowSize();
   const isMobile = size.innerWidth < 768;
   console.log(data.menuItems.map((item) => {
     if (isMobile) {
@@ -178,4 +177,6 @@ Navbar.defaultProps = {
   showIcons: true,
 };
 
-export default Navbar;
+const NavbarWithInnerWidth = withInnerWidth(Navbar);
+
+export default NavbarWithInnerWidth;
