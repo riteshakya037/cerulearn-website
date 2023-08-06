@@ -91,13 +91,15 @@ const Navbar = ({ navbarStyle, logoStyle, button, btnStyle }) => {
   };
 
   const size = process.browser && useWindowSize();
+  const isMobile = size.innerWidth < 480;
 
   return (
     <NavbarWrapper {...navbarStyle}>
       <Container>
         <Logo
+          key={isMobile}
           href="#"
-          logoSrc={size.innerWidth > 480 ? LogoImage : LogoTextImage}
+          logoSrc={isMobile ? LogoTextImage : LogoImage}
           title="Agency"
           logoStyle={logoStyle}
         />
