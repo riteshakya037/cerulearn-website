@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Box from 'common/components/Box';
@@ -18,6 +18,21 @@ import {
 } from './banner.style';
 import { BANNER_DATA } from 'common/data/App/Banner'
 import AppScreenshot from 'common/assets/image/app/mobile.png';
+import { withPromiseHandler } from 'containers/App/PromiseHandler'
+import { NewsletterSubscriptionService } from 'services/newsletter'
+
+const service = new NewsletterSubscriptionService();
+
+const subscribeToNewsletter = async (email) => {
+  const response = await service.subscribe(email);
+  if (!response.success && response.code == "ValidationError") {
+    return {
+      ...response,
+      message: "Please proviede a valid email address"
+    }
+  }
+  return response;
+};
 
 const DomainSection = ({
   SectionWrapper,
@@ -29,9 +44,23 @@ const DomainSection = ({
   imageArea,
   discountAmount,
   discountText,
+  promiseStatus,
+  handlePromise
 }) => {
   const { sectionImage, screenImage, tagLine, buttons } =
     BANNER_DATA
+  const [email, setEmail] = useState(''); // Initialize email state
+
+  const handleSubscribe = (email) => {
+    handlePromise(email);
+  };
+
+  useEffect(() => {
+    if (promiseStatus == "success") {
+      setEmail("")
+    }
+  }, [promiseStatus]);
+
   return (
     <Box {...SectionWrapper}>
       <ParticlesComponent />
@@ -55,11 +84,23 @@ const DomainSection = ({
             <EmailWrapper>
               <input
                 type='text'
+                id="emailInput"
                 placeholder='Enter Email address..'
                 className='input-email'
+                value={email}
+                disabled={promiseStatus === 'pending'}
+                onChange={(e) => setEmail(e.target.value)} // Update email state on change
               />
-              <button className='input-button'>
-                <img src={arrowIcon?.src} alt='banner button' />
+              <button className='input-button'
+                disabled={promiseStatus === 'pending'}
+                onClick={() => handleSubscribe(email)}
+              >
+                {promiseStatus === 'pending' ? (
+                  <div className="lds-dual-ring">
+                  </div>
+                ) : (
+                  <img src={arrowIcon?.src} alt='banner button' />
+                )}
               </button>
             </EmailWrapper>
             <Text as='p' className='tagLine' content={tagLine} />
@@ -183,4 +224,9 @@ DomainSection.defaultProps = {
   },
 };
 
-export default DomainSection;
+
+const DomainSectionWithSubscription = withPromiseHandler(DomainSection, {
+  promise: subscribeToNewsletter,
+});
+
+export default DomainSectionWithSubscription;
