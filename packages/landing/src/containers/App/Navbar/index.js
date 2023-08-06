@@ -91,7 +91,7 @@ const Navbar = ({ navbarStyle, logoStyle, button, btnStyle }) => {
   };
 
   const size = process.browser && useWindowSize();
-  const isMobile = size.innerWidth < 480;
+  const isMobile = size.innerWidth < 768;
 
   return (
     <NavbarWrapper {...navbarStyle}>
