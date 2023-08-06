@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 
 export function withInnerWidth(Component) {
     return function WithInnerWidth(props) {
-        if (!process.browser) return <Component {...props} size={{}} />;
-
         function getSize() {
             return {
                 innerHeight: window.innerHeight,
@@ -14,7 +12,7 @@ export function withInnerWidth(Component) {
         }
 
 
-        let [windowSize, setWindowSize] = useState(getSize());
+        let [windowSize, setWindowSize] = useState({});
 
         function handleResize() {
             setWindowSize(getSize());
@@ -22,7 +20,7 @@ export function withInnerWidth(Component) {
 
         useEffect(() => {
             window.addEventListener('resize', handleResize);
-
+            handleResize();
             return () => {
                 window.removeEventListener('resize', handleResize);
             };

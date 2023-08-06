@@ -90,7 +90,7 @@ const Navbar = ({ navbarStyle, logoStyle, showIcons, size }) => {
     });
   };
 
-  const isMobile = size.innerWidth < 768;
+  const isMobile = size.innerWidth < 480;
   console.log(data.menuItems.map((item) => {
     if (isMobile) {
       delete item.offset;
@@ -159,20 +159,9 @@ Navbar.defaultProps = {
   logoStyle: {
     height: "60px"
   },
-  button: {
-    type: 'button',
-    fontSize: '14px',
-    fontWeight: '600',
+  buttonStyle: {
+    minHeight: '70px',
     color: '#fff',
-    borderRadius: '4px',
-    pl: '22px',
-    pr: '22px',
-    colors: 'primaryWithBg',
-  },
-  btnStyle: {
-    minWidth: '156px',
-    fontSize: '14px',
-    fontWeight: '500',
   },
   showIcons: true,
 };

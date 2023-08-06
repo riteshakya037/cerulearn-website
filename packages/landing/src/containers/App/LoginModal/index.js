@@ -12,9 +12,9 @@ import Button from 'common/components/Button';
 import Image from 'common/components/Image';
 import LoginModalWrapper from './loginModal.style';
 import 'rc-tabs/assets/index.css';
-import LogoImage from 'common/assets/image/agency/logo.png';
-import LoginImage from 'common/assets/image/agency/login-bg.jpg';
-import GoogleLogo from 'common/assets/image/agency/google-icon.jpg';
+import LogoImage from 'common/assets/image/app/logo.svg';
+import LoginImage from 'common/assets/image/app/login-bg.jpg';
+import GoogleLogo from 'common/assets/image/app/google-icon.jpg';
 
 const LoginModal = ({
 	row,
@@ -58,8 +58,8 @@ const LoginModal = ({
 						<Tabs
 							defaultActiveKey="loginForm"
 							animated={{ tabPane: true }}
-							// renderTabBar={() => <ScrollableInkTabBar />}
-							// renderTabContent={() => <TabContent />}
+						// renderTabBar={() => <ScrollableInkTabBar />}
+						// renderTabContent={() => <TabContent />}
 						>
 							<TabPane tab="LOGIN" key="loginForm">
 								<Heading content="Welcome Folk" {...titleStyle} />

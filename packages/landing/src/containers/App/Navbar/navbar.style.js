@@ -4,8 +4,8 @@ import { themeGet } from '@styled-system/theme-get';
 const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 16px;
+  padding-right: 16px;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -13,6 +13,8 @@ const Container = styled.div`
 
   @media (min-width: 768px) {
     max-width: 750px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   @media (min-width: 992px) {
     max-width: 970px;
@@ -24,7 +26,6 @@ const Container = styled.div`
     .reusecore__button {
       .btn-icon {
         color: #fff;
-        font-size: 18px;
         width: auto;
         margin: 0;
         @media (max-width: 1100px) {

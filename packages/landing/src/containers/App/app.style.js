@@ -215,13 +215,11 @@ const AppWrapper = styled.div`
 
     .reusecore__button {
       .btn-icon {
+        transform: translate(6px, 0);
         color: ${themeGet('colors.white', '#ffffff')};
-        font-size: 18px;
+        font-size: 20px;
         @media only screen and (max-width: 1100px) {
           color: ${themeGet('colors.primary', '#1a73e8')};
-        }
-        @media only screen and (max-width: 420px) {
-          font-size: 14px;
         }
       }
       &:hover {

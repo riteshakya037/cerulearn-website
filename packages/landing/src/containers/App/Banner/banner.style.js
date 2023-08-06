@@ -50,8 +50,8 @@ export const EmailWrapper = styled.section`
   }
   @media (max-width: 480px) {
     margin-top: 30px;
+    margin-bottom: 30px;
     padding-bottom: 20px;
-    margin-bottom: 20px;
   }
   &::before {
     content: url(${Mail?.src});
