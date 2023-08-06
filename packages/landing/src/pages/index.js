@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 import Sticky from 'react-stickynode';
@@ -22,33 +22,7 @@ import FeatureSlider from 'containers/App/FeatureSlider';
 import FeatureSliderTwo from 'containers/App/FeatureSliderTwo';
 import { DrawerProvider } from 'common/contexts/DrawerContext';
 import Faq from 'containers/App/Faq'
-
-function getSize() {
-  return {
-    innerHeight: window.innerHeight,
-    innerWidth: window.innerWidth,
-    outerHeight: window.outerHeight,
-    outerWidth: window.outerWidth,
-  };
-}
-
-function useWindowSize() {
-  let [windowSize, setWindowSize] = useState(getSize());
-
-  function handleResize() {
-    setWindowSize(getSize());
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  return windowSize;
-}
+import { useWindowSize } from 'common/contexts/SizeContext'
 
 const App = () => {
   const size = process.browser && useWindowSize();

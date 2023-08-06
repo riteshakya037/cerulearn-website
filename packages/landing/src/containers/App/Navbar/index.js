@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import NavbarWrapper from 'common/components/Navbar';
 import Drawer from 'common/components/Drawer';
@@ -11,8 +11,10 @@ import { openModal, closeModal } from '@redq/reuse-modal';
 import SearchPanel from '../SearchPanel';
 import LoginModal from '../LoginModal';
 import Link from 'next/link';
+import { useWindowSize } from 'common/contexts/SizeContext'
 
-import LogoImage from 'common/assets/image/app/logo.png';
+import LogoImage from 'common/assets/image/app/logo.svg';
+import LogoTextImage from 'common/assets/image/app/logo_text_alt.svg';
 
 import { DrawerContext } from 'common/contexts/DrawerContext';
 
@@ -88,12 +90,14 @@ const Navbar = ({ navbarStyle, logoStyle, button, btnStyle }) => {
     });
   };
 
+  const size = process.browser && useWindowSize();
+
   return (
     <NavbarWrapper {...navbarStyle}>
       <Container>
         <Logo
           href="#"
-          logoSrc={LogoImage}
+          logoSrc={size.innerWidth > 480 ? LogoImage : LogoTextImage}
           title="Agency"
           logoStyle={logoStyle}
         />
@@ -139,7 +143,7 @@ Navbar.defaultProps = {
     minHeight: '70px',
   },
   logoStyle: {
-    width: '60px',
+    height: "60px"
   },
   button: {
     type: 'button',

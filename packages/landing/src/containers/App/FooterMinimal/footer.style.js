@@ -74,6 +74,7 @@ export const Menu = styled.div`
 `;
 export const CopyText = styled.p`
   margin: 0;
+  transform: translate(0, -2px);
 `;
 export const Social = styled.div`
   display: flex;

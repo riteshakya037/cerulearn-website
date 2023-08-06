@@ -1,4 +1,4 @@
-import footerLogo from 'common/assets/image/app/logo.png';
+import footerLogo from 'common/assets/image/app/logo.svg';
 
 import footerLinkedIn from 'common/assets/image/app/footer/footer-linkedin.svg';
 import footerFacebook from 'common/assets/image/app/footer/footer-facebook.svg';

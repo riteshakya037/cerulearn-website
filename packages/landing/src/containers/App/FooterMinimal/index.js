@@ -26,7 +26,7 @@ const Footer = () => {
             href="/appminimal"
             logoSrc={logo}
             logoStyle={{
-              height: 50
+              height: 50,
             }}
             title="App Classic"
           />
