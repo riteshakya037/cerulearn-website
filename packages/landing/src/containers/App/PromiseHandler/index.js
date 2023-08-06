@@ -30,6 +30,9 @@ export const withPromiseHandler = (WrappedComponent, promiseConfig) => {
                 }
             } catch (error) {
                 this.setState({ promiseStatus: 'error' });
+                toast("Shoot, Something went wrong please try again later", {
+                    type: "error"
+                });
             }
         }
 
