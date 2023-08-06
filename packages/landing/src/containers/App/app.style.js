@@ -283,9 +283,6 @@ const AppWrapper = styled.div`
     top: 0;
     left: 0;
     pointer-events: none;
-    @media (max-width: 990px) {
-      display: none;
-    }
   }
   .reusecore__button {
     transition: all 0.3s ease;
