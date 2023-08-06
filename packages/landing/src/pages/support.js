@@ -13,7 +13,7 @@ import Footer from 'containers/App/FooterMinimal';
 import { DrawerProvider } from 'common/contexts/DrawerContext';
 import ParticlesComponent from 'containers/App/particles';
 
-const Custom404 = () => {
+const Support = () => {
   return (
     <ThemeProvider theme={appTheme}>
       <>
@@ -46,7 +46,7 @@ const Custom404 = () => {
               fontFamily: 'Lato',
             }}
           >
-            404 - Page Not Found!
+            Support
           </h1>
           <Footer />
         </AppWrapper>
@@ -54,4 +54,4 @@ const Custom404 = () => {
     </ThemeProvider>
   );
 };
-export default Custom404;
+export default Support;

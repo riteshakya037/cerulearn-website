@@ -10,12 +10,10 @@ import Card from 'common/components/Card';
 import NextImage from 'common/components/NextImage';
 import FeatureBlock from 'common/components/FeatureBlock';
 import Container from 'common/components/UI/Container';
-import { PaymentCircleShape } from '../app.style';
+import ImageOne from 'common/assets/image/app/info1.png';
+import ImageTwo from 'common/assets/image/app/info2.png';
 
-import ImageOne from 'common/assets/image/app/mockup.png';
-import ImageTwo from 'common/assets/image/app/credit-card.png';
-
-const PaymentSection = ({
+const CerulearnApp = ({
   sectionWrapper,
   row,
   col,
@@ -33,10 +31,8 @@ const PaymentSection = ({
   btnStyle,
 }) => {
   return (
-    <Box {...sectionWrapper} id="payments">
-      <PaymentCircleShape />
-
-      <Container fullWidth noGutter className="control-sec-container payment">
+    <Box {...sectionWrapper} id="cerulearn_app">
+      <Container fullWidth noGutter className="control-sec-container">
         <Box {...row} {...imageAreaRow}>
           <Box {...col} {...imageArea}>
             <Card {...imageWrapper} {...imageWrapperOne}>
@@ -44,12 +40,8 @@ const PaymentSection = ({
                 <NextImage src={ImageOne} alt="Info Image One" />
               </Fade>
             </Card>
-            <Card
-              {...imageWrapper}
-              {...imageWrapperTwo}
-              className="cardExtraImage"
-            >
-              <Fade right>
+            <Card {...imageWrapper} {...imageWrapperTwo}>
+              <Fade bottom>
                 <NextImage src={ImageTwo} alt="Info Image Two" />
               </Fade>
             </Card>
@@ -59,24 +51,24 @@ const PaymentSection = ({
       <Container>
         <Box {...row} {...textAreaRow}>
           <Box {...col} {...textArea}>
-            <Text content="CERULYTICS DASHBOARD" {...sectionSubTitle} />
+            <Text content="CERULEARN APP" {...sectionSubTitle} />
             <FeatureBlock
               title={
                 <Heading
-                  content="Empowering Institutions with Marketing Insights"
+                  content="Seamless Learning at Your Fingertips"
                   {...title}
                 />
               }
               description={
                 <Text
-                  content="Our Cerulytics Dashboard is a fast, secure, and user-friendly platform that provides educational institutions with valuable marketing insights. With cloud-based technology and comprehensive analytics, institutions gain deep insights into marketing campaigns, student engagement, and user behavior. Make informed decisions and optimize marketing strategies effortlessly with our intuitive dashboard."
+                  content="The Cerulearn app offers a seamless learning experience for students and parents. Access all necessary information for effective learning, from online classes to assignments. Parents can effortlessly stay informed about their child's academic journey. With a user-friendly interface, learning becomes efficient and engaging on-the-go."
                   {...description}
                 />
               }
               button={
-                <Link href="#">
+                <Link href="/contact">
                   <a>
-                    <Button title="HOW IT WORKS" {...button} {...btnStyle} />
+                    <Button title="Request a Demo" {...button} {...btnStyle} />
                   </a>
                 </Link>
               }
@@ -88,7 +80,7 @@ const PaymentSection = ({
   );
 };
 
-PaymentSection.propTypes = {
+CerulearnApp.propTypes = {
   sectionWrapper: PropTypes.object,
   row: PropTypes.object,
   col: PropTypes.object,
@@ -98,11 +90,11 @@ PaymentSection.propTypes = {
   btnStyle: PropTypes.object,
 };
 
-PaymentSection.defaultProps = {
+CerulearnApp.defaultProps = {
   sectionWrapper: {
     as: 'section',
-    pt: ['20px', '40px', '40px', '80px', '80px'],
-    pb: ['80px', '80px', '80px', '180px', '280px'],
+    pt: ['40px', '80px'],
+    pb: ['40px', '80px'],
   },
   row: {
     flexBox: true,
@@ -118,11 +110,10 @@ PaymentSection.defaultProps = {
     pl: '15px',
   },
   textArea: {
-    width: [1, 1, '45%', '45%', '45%'],
-    zIndex: '1',
+    width: ['100%', '100%', '50%', '50%', '50%'],
   },
   imageArea: {
-    width: [0, 0, '52%', '45%', '45%'],
+    width: ['0px', '0px', '53%', '50%', '50%'],
     flexBox: true,
   },
   imageWrapper: {
@@ -132,21 +123,21 @@ PaymentSection.defaultProps = {
     pointerEvents: 'none',
   },
   imageWrapperTwo: {
-    alignSelf: 'flex-start',
-    mt: ['0px', '0px', '40px', '50px', '90px'],
-    ml: ['-250px', '-250px', '-180px', '-220px', '-420px'],
+    alignSelf: 'flex-end',
+    mb: '-60px',
+    ml: ['0px', '0px', '-200px', '-250px', '-400px'],
     pointerEvents: 'none',
   },
   sectionSubTitle: {
     as: 'span',
     display: 'block',
-    textAlign: ['center', 'left'],
     fontSize: '14px',
     letterSpacing: '0.11em',
     fontWeight: '700',
     color: '#1a73e8',
     textTransform: 'uppercase',
     mb: '10px',
+    textAlign: ['center', 'left'],
   },
   title: {
     fontSize: ['24px', '26px', '30px', '36px', '48px'],
@@ -160,7 +151,7 @@ PaymentSection.defaultProps = {
   description: {
     fontSize: '16px',
     color: '#343d48cc',
-    lineHeight: '2.1',
+    lineHeight: '1.75',
     mb: '33px',
     maxWidth: ['100%', '100%', '100%', '440px', '440px'],
     textAlign: ['center', 'left'],
@@ -182,4 +173,4 @@ PaymentSection.defaultProps = {
   },
 };
 
-export default PaymentSection;
+export default CerulearnApp;

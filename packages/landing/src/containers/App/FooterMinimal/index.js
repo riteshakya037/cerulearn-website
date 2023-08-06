@@ -23,7 +23,7 @@ const Footer = () => {
         <Left>
           <Logo
             className="logo"
-            href="/appminimal"
+            href="/"
             logoSrc={logo}
             logoStyle={{
               height: 50,

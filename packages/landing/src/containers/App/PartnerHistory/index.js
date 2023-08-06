@@ -39,7 +39,6 @@ const PartnerHistory = ({
             <FeatureBlock
               title={<Heading {...title} />}
               description={<Text {...description} />}
-              button={<Button title="WORK HISTORY" {...btnStyle} />}
             />
           </Box>
           <Box className="col" {...col} {...cardArea}>

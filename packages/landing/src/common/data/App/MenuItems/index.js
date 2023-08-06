@@ -1,35 +1,40 @@
 const data = {
   menuItems: [
     {
-      label: 'Our Services',
-      path: '#services',
-      offset: '100',
+      "label": "Our Services",
+      "path": "#services",
+      "offset": "100"
     },
     {
-      label: 'Control Remotely',
-      path: '#control',
-      offset: '100',
+      "label": "Cerulearn App",
+      "path": "#cerulearn_app",
+      "offset": "100"
     },
     {
-      label: 'Key Features',
-      path: '#keyfeature',
-      offset: '0',
+      "label": "Why Choose Us",
+      "path": "#keyfeature",
+      "offset": "-100"
     },
     {
-      label: 'Partners',
-      path: '#partners',
-      offset: '-100',
+      "label": "Partners",
+      "path": "#partners",
+      "offset": "-100"
     },
     {
-      label: 'Payments',
-      path: '#payments',
-      offset: '100',
+      "label": "Cerulytics Dashboard",
+      "path": "#cerulytics_dashboard",
+      "offset": "100"
     },
     {
-      label: 'Testimonial',
-      path: '#testimonialSection',
-      offset: '100',
+      "label": "Customer Opinions",
+      "path": "#testimonialSection",
+      "offset": "150"
     },
+    {
+      "label": "Frequent Questions",
+      "path": "#faq",
+      "offset": "100"
+    }
   ],
 };
 export default data;

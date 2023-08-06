@@ -37,7 +37,7 @@ const CloseModalButtonAlt = () => (
     icon={<i className="flaticon-plus-symbol" />}
   />
 );
-const Navbar = ({ navbarStyle, logoStyle, button, btnStyle }) => {
+const Navbar = ({ navbarStyle, logoStyle, showIcons, }) => {
   const { state, dispatch } = useContext(DrawerContext);
   // Search modal handler
   const handleSearchModal = () => {
@@ -92,18 +92,24 @@ const Navbar = ({ navbarStyle, logoStyle, button, btnStyle }) => {
 
   const size = process.browser && useWindowSize();
   const isMobile = size.innerWidth < 768;
+  console.log(data.menuItems.map((item) => {
+    if (isMobile) {
+      delete item.offset;
+    }
+    return item;
+  }))
 
   return (
     <NavbarWrapper {...navbarStyle}>
       <Container>
         <Logo
           key={isMobile}
-          href="#"
+          href="/"
           logoSrc={isMobile ? LogoTextImage : LogoImage}
           title="Agency"
           logoStyle={logoStyle}
         />
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        {showIcons && <div style={{ display: 'flex', alignItems: 'center' }}>
           <Link href="https://app.ceruai.com" >
             <a target="_blank" rel="noopener noreferrer">
               <Button
@@ -121,12 +127,18 @@ const Navbar = ({ navbarStyle, logoStyle, button, btnStyle }) => {
             toggleHandler={toggleHandler}
           >
             <ScrollSpyMenu
-              menuItems={data.menuItems}
+              menuItems={data.menuItems.map((item) => {
+                if (isMobile) {
+                  item.offset = "100";
+                }
+                return item;
+              })}
               drawerClose={true}
               offset={-100}
             />
           </Drawer>
         </div>
+        }
       </Container>
     </NavbarWrapper>
   );
@@ -138,6 +150,7 @@ Navbar.propTypes = {
   logoStyle: PropTypes.object,
   button: PropTypes.object,
   btnStyle: PropTypes.object,
+  showIcons: PropTypes.bool,
 };
 
 Navbar.defaultProps = {
@@ -162,6 +175,7 @@ Navbar.defaultProps = {
     fontSize: '14px',
     fontWeight: '500',
   },
+  showIcons: true,
 };
 
 export default Navbar;

@@ -10,10 +10,12 @@ import Card from 'common/components/Card';
 import NextImage from 'common/components/NextImage';
 import FeatureBlock from 'common/components/FeatureBlock';
 import Container from 'common/components/UI/Container';
-import ImageOne from 'common/assets/image/app/info1.png';
-import ImageTwo from 'common/assets/image/app/info2.png';
+import { PaymentCircleShape } from '../app.style';
 
-const ControlSection = ({
+import ImageOne from 'common/assets/image/app/mockup.png';
+import ImageTwo from 'common/assets/image/app/credit-card.png';
+
+const CerulyticsDashboard = ({
   sectionWrapper,
   row,
   col,
@@ -31,8 +33,10 @@ const ControlSection = ({
   btnStyle,
 }) => {
   return (
-    <Box {...sectionWrapper} id="control">
-      <Container fullWidth noGutter className="control-sec-container">
+    <Box {...sectionWrapper} id="cerulytics_dashboard">
+      <PaymentCircleShape />
+
+      <Container fullWidth noGutter className="control-sec-container payment">
         <Box {...row} {...imageAreaRow}>
           <Box {...col} {...imageArea}>
             <Card {...imageWrapper} {...imageWrapperOne}>
@@ -40,8 +44,12 @@ const ControlSection = ({
                 <NextImage src={ImageOne} alt="Info Image One" />
               </Fade>
             </Card>
-            <Card {...imageWrapper} {...imageWrapperTwo}>
-              <Fade bottom>
+            <Card
+              {...imageWrapper}
+              {...imageWrapperTwo}
+              className="cardExtraImage"
+            >
+              <Fade right>
                 <NextImage src={ImageTwo} alt="Info Image Two" />
               </Fade>
             </Card>
@@ -51,24 +59,24 @@ const ControlSection = ({
       <Container>
         <Box {...row} {...textAreaRow}>
           <Box {...col} {...textArea}>
-            <Text content="CERULEARN APP" {...sectionSubTitle} />
+            <Text content="CERULYTICS DASHBOARD" {...sectionSubTitle} />
             <FeatureBlock
               title={
                 <Heading
-                  content="Seamless Learning at Your Fingertips"
+                  content="Empowering Institutions with Marketing Insights"
                   {...title}
                 />
               }
               description={
                 <Text
-                  content="The Cerulearn app offers a seamless learning experience for students and parents. Access all necessary information for effective learning, from online classes to assignments. Parents can effortlessly stay informed about their child's academic journey. With a user-friendly interface, learning becomes efficient and engaging on-the-go."
+                  content="Our Cerulytics Dashboard is a fast, secure, and user-friendly platform that provides educational institutions with valuable marketing insights. With cloud-based technology and comprehensive analytics, institutions gain deep insights into marketing campaigns, student engagement, and user behavior. Make informed decisions and optimize marketing strategies effortlessly with our intuitive dashboard."
                   {...description}
                 />
               }
               button={
-                <Link href="#">
+                <Link href="/contact">
                   <a>
-                    <Button title="LEARN MORE" {...button} {...btnStyle} />
+                    <Button title="Request A Demo" {...button} {...btnStyle} />
                   </a>
                 </Link>
               }
@@ -80,7 +88,7 @@ const ControlSection = ({
   );
 };
 
-ControlSection.propTypes = {
+CerulyticsDashboard.propTypes = {
   sectionWrapper: PropTypes.object,
   row: PropTypes.object,
   col: PropTypes.object,
@@ -90,11 +98,11 @@ ControlSection.propTypes = {
   btnStyle: PropTypes.object,
 };
 
-ControlSection.defaultProps = {
+CerulyticsDashboard.defaultProps = {
   sectionWrapper: {
     as: 'section',
-    pt: ['40px', '80px'],
-    pb: ['40px', '80px'],
+    pt: ['20px', '40px', '40px', '80px', '80px'],
+    pb: ['80px', '80px', '80px', '180px', '280px'],
   },
   row: {
     flexBox: true,
@@ -110,10 +118,11 @@ ControlSection.defaultProps = {
     pl: '15px',
   },
   textArea: {
-    width: ['100%', '100%', '50%', '50%', '50%'],
+    width: [1, 1, '45%', '45%', '45%'],
+    zIndex: '1',
   },
   imageArea: {
-    width: ['0px', '0px', '53%', '50%', '50%'],
+    width: [0, 0, '52%', '45%', '45%'],
     flexBox: true,
   },
   imageWrapper: {
@@ -123,21 +132,21 @@ ControlSection.defaultProps = {
     pointerEvents: 'none',
   },
   imageWrapperTwo: {
-    alignSelf: 'flex-end',
-    mb: '-60px',
-    ml: ['0px', '0px', '-200px', '-250px', '-400px'],
+    alignSelf: 'flex-start',
+    mt: ['0px', '0px', '40px', '50px', '90px'],
+    ml: ['-250px', '-250px', '-180px', '-220px', '-420px'],
     pointerEvents: 'none',
   },
   sectionSubTitle: {
     as: 'span',
     display: 'block',
+    textAlign: ['center', 'left'],
     fontSize: '14px',
     letterSpacing: '0.11em',
     fontWeight: '700',
     color: '#1a73e8',
     textTransform: 'uppercase',
     mb: '10px',
-    textAlign: ['center', 'left'],
   },
   title: {
     fontSize: ['24px', '26px', '30px', '36px', '48px'],
@@ -151,7 +160,7 @@ ControlSection.defaultProps = {
   description: {
     fontSize: '16px',
     color: '#343d48cc',
-    lineHeight: '1.75',
+    lineHeight: '2.1',
     mb: '33px',
     maxWidth: ['100%', '100%', '100%', '440px', '440px'],
     textAlign: ['center', 'left'],
@@ -173,4 +182,4 @@ ControlSection.defaultProps = {
   },
 };
 
-export default ControlSection;
+export default CerulyticsDashboard;

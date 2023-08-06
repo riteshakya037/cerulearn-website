@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Link from 'next/link';
 import Container from 'common/components/UI/Container';
 import Heading from 'common/components/Heading';
 import Button from 'common/components/Button';
@@ -25,7 +26,11 @@ const CallToAction = () => {
               content="We'd love to demonstrate what we can do for you"
             />
             <ButtonWrap>
-              <Button title="Request Demo" />
+              <Link href="/contact">
+                <a>
+                  <Button title="Request A Demo" />
+                </a>
+              </Link>
             </ButtonWrap>
           </ContentWrap>
         </Content>

@@ -130,19 +130,15 @@ const data = {
   ],
   menu: [
     {
-      link: '#',
+      link: '/support',
       label: 'Support',
     },
     {
-      link: '#',
-      label: 'About Us',
-    },
-    {
-      link: '#',
+      link: '/privacy',
       label: 'Privacy',
     },
     {
-      link: '#',
+      link: '/contact',
       label: 'Contact',
     },
   ],

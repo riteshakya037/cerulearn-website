@@ -12,10 +12,10 @@ import ResetCSS from 'common/assets/css/style';
 import Navbar from 'containers/App/Navbar';
 import DomainSection from 'containers/App/Banner';
 import FeatureSection from 'containers/App/FeatureSection';
-import ControlSection from 'containers/App/Control';
+import CerulearnApp from 'containers/App/CerulearnApp';
 import TestimonialSection from 'containers/App/Testimonial';
 import PartnerHistory from 'containers/App/PartnerHistory';
-import PaymentSection from 'containers/App/PaymentSection';
+import CerulyticsDashboard from 'containers/App/CerulyticsDashboard';
 import Footer from 'containers/App/FooterMinimal';
 import CallToAction from 'containers/App/CallToAction';
 import FeatureSlider from 'containers/App/FeatureSlider';
@@ -50,12 +50,12 @@ const App = () => {
           </Sticky>
           <DomainSection />
           <FeatureSection />
-          <ControlSection />
+          <CerulearnApp />
           <ConditionWrapper id="keyfeature">
             {size.innerWidth > 1100 ? <FeatureSlider /> : <FeatureSliderTwo />}
           </ConditionWrapper>
           <PartnerHistory />
-          <PaymentSection />
+          <CerulyticsDashboard />
           <TestimonialSection />
           <Faq />
           <CallToAction />
