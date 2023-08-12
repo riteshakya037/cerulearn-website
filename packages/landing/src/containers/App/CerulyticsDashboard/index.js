@@ -76,7 +76,7 @@ const CerulyticsDashboard = ({
               button={
                 <Link href="/contact">
                   <a>
-                    <Button title="Request A Demo" {...button} {...btnStyle} />
+                    <Button title="Contact Us" {...button} {...btnStyle} />
                   </a>
                 </Link>
               }

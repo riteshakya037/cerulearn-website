@@ -68,7 +68,7 @@ const CerulearnApp = ({
               button={
                 <Link href="/contact">
                   <a>
-                    <Button title="Request a Demo" {...button} {...btnStyle} />
+                    <Button title="Contact Us" {...button} {...btnStyle} />
                   </a>
                 </Link>
               }
