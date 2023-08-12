@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Box from 'common/components/Box';
 import Text from 'common/components/Text';
@@ -39,6 +39,25 @@ const ContactForm = ({
         subscribe: true,
     });
 
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        if (promiseStatus == "success") {
+            resetFields();
+        }
+    }, [promiseStatus]);
+
+    const resetFields = () => {
+        setCount(count + 1);
+        setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+            subscribe: true,
+        });
+    }
+
     const handleChange = (name, value) => {
         setFormData((prevData) => ({
             ...prevData,
@@ -68,7 +87,7 @@ const ContactForm = ({
                             content="We'd love to hear from you! Please fill out the form below to get in touch."
                             {...descriptionStyle}
                         />
-                        <form onSubmit={handleSubmit}>
+                        <form key={'contact-form' + count} onSubmit={handleSubmit}>
                             <Input
                                 inputType="text"
                                 id="name"
