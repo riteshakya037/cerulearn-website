@@ -33,7 +33,7 @@ const Footer = () => {
           <CopyText>
             Copyright © {year}
             <Link href="/">
-              <a>Ceru Inc.</a>
+              <a>Cerulearn Inc.</a>
             </Link>
           </CopyText>
         </Left>

@@ -45,7 +45,6 @@ const MainContainer = ({ children, size }) => {
                         justifyContent: 'center',
                         alignItems: 'center',
                         minHeight: isThickerFooter ? 'calc(100vh - 296px)' : 'calc(100vh - 244px)',
-                        fontFamily: 'Lato',
                     }}
                 >
                     {children}

@@ -1,14 +1,14 @@
 import React from 'react';
 import MainContainer from 'containers/App/MainContainer';
-import { POLICY } from 'common/data/App/Policy'
+import { TERMS } from 'common/data/App/Terms'
 import MarkdownBody from 'containers/App/MarkdownBody';
 
-const Privacy = () => {
+const Terms = () => {
   return (
     <MainContainer>
-      <MarkdownBody data={POLICY.data} />
+      <MarkdownBody data={TERMS.data} />
     </MainContainer>
   );
 };
 
-export default Privacy;
+export default Terms;

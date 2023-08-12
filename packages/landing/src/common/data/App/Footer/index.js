@@ -134,6 +134,10 @@ const data = {
       label: 'Support',
     },
     {
+      link: 'mailto:support@cerulearn.com',
+      label: 'Terms',
+    },
+    {
       link: '/privacy',
       label: 'Privacy',
     },
