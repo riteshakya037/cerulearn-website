@@ -10,6 +10,15 @@ import Image from 'common/components/Image';
 import ContactFormWrapper from './contactForm.style';
 import 'rc-tabs/assets/index.css';
 import LoginImage from 'common/assets/image/app/login-bg.jpg';
+import { withPromiseHandler } from 'containers/App/PromiseHandler'
+import { ContactUsService } from 'services/contact'
+
+const service = new ContactUsService();
+
+const submitContractForm = async (contactInfo) => {
+    const response = await service.submit(contactInfo);
+    return response;
+};
 
 const ContactForm = ({
     row,
@@ -18,6 +27,8 @@ const ContactForm = ({
     titleStyle,
     contentWrapper,
     descriptionStyle,
+    promiseStatus,
+    handlePromise
 }) => {
 
     const [formData, setFormData] = useState({
@@ -37,11 +48,7 @@ const ContactForm = ({
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-
-
-        console.log(formData);
-
+        handlePromise(formData);
     };
 
     return (
@@ -69,6 +76,7 @@ const ContactForm = ({
                                 label="Name"
                                 required
                                 isMaterial={true}
+                                disabled={promiseStatus === 'pending'}
                                 onChange={handleChange}
                             />
                             <Input
@@ -78,6 +86,8 @@ const ContactForm = ({
                                 label="Email"
                                 required
                                 isMaterial={true}
+                                disabled={promiseStatus === 'pending'}
+
                                 onChange={handleChange}
                             />
                             <Input
@@ -87,6 +97,8 @@ const ContactForm = ({
                                 label="Subject"
                                 required
                                 isMaterial={true}
+                                disabled={promiseStatus === 'pending'}
+
                                 onChange={handleChange}
                             />
                             <Input
@@ -96,6 +108,7 @@ const ContactForm = ({
                                 label="Message"
                                 required
                                 isMaterial={true}
+                                disabled={promiseStatus === 'pending'}
                                 onChange={handleChange}
                             />
                             <div>
@@ -103,11 +116,17 @@ const ContactForm = ({
                                     id="subscribe"
                                     htmlFor="subscribe"
                                     isChecked={formData.subscribe}
+                                    disabled={promiseStatus === 'pending'}
                                     labelText="Subscribe to Newsletter"
                                 />
                                 <br />
                                 <Fragment>
-                                    <Button className="default" title="Submit" type="submit" {...btnStyle} />
+                                    <Button
+                                        className="default"
+                                        title="Submit"
+                                        type="submit" {...btnStyle}
+                                        isLoading={promiseStatus === 'pending'}
+                                    />
                                 </Fragment>
                             </div>
                         </form>
@@ -165,4 +184,9 @@ ContactForm.defaultProps = {
     },
 };
 
-export default ContactForm;
+
+const ContactFormWithSubscription = withPromiseHandler(ContactForm, {
+    promise: submitContractForm,
+});
+
+export default ContactFormWithSubscription;

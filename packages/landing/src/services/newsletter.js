@@ -6,7 +6,6 @@ export class NewsletterSubscriptionService {
     }
 
     subscribe = async (email) => {
-        console.log("subscribe", email)
         const apiUrlWithQuery = `${this.baseURL}/marketing/newsletter?email=${email}`;
         const response = await fetch(apiUrlWithQuery);
         const data = await response.json();

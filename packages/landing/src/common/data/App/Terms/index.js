@@ -39,7 +39,7 @@ Cerulearn may update these Terms and Conditions periodically. Users are advised 
 
 ### Contact Us:
 
-For any questions or suggestions regarding our Terms and Conditions, please contact us at [support@cerulearn.com](mailto:support@cerulearn.com).
+For any questions or suggestions regarding our Terms and Conditions, please contact us at [support@ceruai.com](mailto:support@ceruai.com).
 
 Thank you for using Cerulearn. Your adherence to these terms ensures a safe and optimal user experience.
     `

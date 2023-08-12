@@ -72,7 +72,7 @@ We may update our Privacy Policy periodically. You are advised to review this po
 
 ### Contact Us:
 
-If you have any questions or concerns about our Privacy Policy, please reach out to us at [support@cerulearn.com](mailto:support@cerulearn.com).
+If you have any questions or concerns about our Privacy Policy, please reach out to us at [support@ceruai.com](mailto:support@ceruai.com).
 
 Thank you for choosing Cerulearn. Your trust and privacy are paramount to us.
 

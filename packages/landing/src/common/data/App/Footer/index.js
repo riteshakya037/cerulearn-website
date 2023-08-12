@@ -134,7 +134,7 @@ const data = {
       label: 'Support',
     },
     {
-      link: 'mailto:support@cerulearn.com',
+      link: 'mailto:support@ceruai.com',
       label: 'Terms',
     },
     {
