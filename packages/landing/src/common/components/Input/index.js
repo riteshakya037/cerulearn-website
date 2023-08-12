@@ -11,6 +11,7 @@ const Input = ({
   inputType,
   isMaterial,
   icon,
+  error,
   iconPosition,
   passwordShowHide,
   className,
@@ -55,7 +56,7 @@ const Input = ({
       ...state,
       value: event.target.value,
     });
-    onChange(event.target.value);
+    onChange(event.target.name, event.target.value);
   };
 
   // get input focus class
@@ -165,6 +166,7 @@ const Input = ({
       {LabelPosition === 'top' && LabelField}
       {inputElement}
       {isMaterial && <span className="highlight" />}
+      {error && <span className='error-message' >{error}</span>}
       {LabelPosition === 'bottom' && LabelField}
     </InputField>
   );
@@ -177,6 +179,7 @@ Input.propTypes = {
 
   /** Set input label value. */
   label: PropTypes.string,
+  error: PropTypes.string,
 
   /** The input value, required for a controlled component. */
   value: PropTypes.oneOf(['string', 'number']),

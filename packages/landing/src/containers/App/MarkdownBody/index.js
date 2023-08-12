@@ -3,16 +3,20 @@ import PropTypes from 'prop-types';
 import Box from 'common/components/Box';
 import Container from 'common/components/UI/Container';
 import ReactMarkdown from 'react-markdown'
+import Heading from 'common/components/Heading';
 
 const MarkdownBody = ({
     sectionWrapper,
     row,
     col,
+    title,
+    titleStyle,
     data,
 }) => {
     return (
         <Box {...sectionWrapper} id="markdown">
             <Container>
+                <Heading content={title} {...titleStyle} />
                 <Box {...row}>
                     <Box {...col}>
                         <ReactMarkdown children={data} />
@@ -36,7 +40,6 @@ MarkdownBody.propTypes = {
 MarkdownBody.defaultProps = {
     sectionWrapper: {
         as: 'section',
-        pt: ['40px', '80px'],
         pb: ['40px', '80px'],
     },
     row: {
@@ -51,6 +54,12 @@ MarkdownBody.defaultProps = {
     col: {
         pr: '15px',
         pl: '15px',
+    },
+    titleStyle: {
+        fontSize: ['36px', '50px'],
+        fontWeight: '400',
+        color: '#20201D',
+        letterSpacing: '-0.025em',
     },
     description: {
         fontSize: '16px',

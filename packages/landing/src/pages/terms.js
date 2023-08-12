@@ -6,7 +6,7 @@ import MarkdownBody from 'containers/App/MarkdownBody';
 const Terms = () => {
   return (
     <MainContainer>
-      <MarkdownBody data={TERMS.data} />
+      <MarkdownBody data={TERMS.data} title={TERMS.title} />
     </MainContainer>
   );
 };

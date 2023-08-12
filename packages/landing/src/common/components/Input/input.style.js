@@ -87,6 +87,14 @@ const InputField = styled.div`
     min-height: 150px;
   }
 
+  .error-message {
+    color: #cc0033;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 5px 0 0;
+  }
+
   /* Input material style */
   &.is-material {
     label {

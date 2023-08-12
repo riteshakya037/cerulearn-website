@@ -1,6 +1,6 @@
 export const POLICY = {
+    title: "Privacy and Policy",
     data: `
-# Privacy Policy    
 Effective Date: August 12, 2023
 
 Cerulearn is dedicated to preserving your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, and protect your data when you utilize our Cerulearn app and associated services. By using our services, you consent to the practices described in this policy.

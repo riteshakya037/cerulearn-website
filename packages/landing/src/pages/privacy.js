@@ -6,7 +6,7 @@ import MarkdownBody from 'containers/App/MarkdownBody';
 const Privacy = () => {
   return (
     <MainContainer>
-      <MarkdownBody data={POLICY.data} />
+      <MarkdownBody data={POLICY.data} title={POLICY.title} />
     </MainContainer>
   );
 };

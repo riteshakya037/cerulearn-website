@@ -1,6 +1,6 @@
 export const TERMS = {
+    title: "Terms and Conditions",
     data: `
-# Terms and Conditions
 Effective Date: August 12, 2023
 
 Thank you for choosing Cerulearn. These Terms and Conditions outline the terms of use for our Cerulearn app and associated services. By downloading and using the app, you agree to adhere to these terms. Please read them carefully.
