@@ -12,8 +12,8 @@ import FeatureBlock from 'common/components/FeatureBlock';
 import Container from 'common/components/UI/Container';
 import { PaymentCircleShape } from '../app.style';
 
-import ImageOne from 'common/assets/image/app/mockup.png';
-import ImageTwo from 'common/assets/image/app/credit-card.png';
+import ImageOne from 'common/assets/image/app/dashboard-data.svg';
+import ImageTwo from 'common/assets/image/app/dashboard-marketing.svg';
 
 const CerulyticsDashboard = ({
   sectionWrapper,
@@ -44,6 +44,8 @@ const CerulyticsDashboard = ({
                 <NextImage src={ImageOne} alt="Info Image One" />
               </Fade>
             </Card>
+          </Box>
+          <Box {...col} {...imageArea}>
             <Card
               {...imageWrapper}
               {...imageWrapperTwo}
@@ -123,18 +125,20 @@ CerulyticsDashboard.defaultProps = {
   },
   imageArea: {
     width: [0, 0, '52%', '45%', '45%'],
-    flexBox: true,
   },
   imageWrapper: {
     boxShadow: 'none',
   },
   imageWrapperOne: {
     pointerEvents: 'none',
+    mt: ['0px', '0px', '40px', '-50px', '-120px'],
+    ml: ['0px', '0px', '0px', '-30px', '0px'],
   },
   imageWrapperTwo: {
     alignSelf: 'flex-start',
-    mt: ['0px', '0px', '40px', '50px', '90px'],
-    ml: ['-250px', '-250px', '-180px', '-220px', '-420px'],
+    display: ["none", "none", "none", "block", "block"],
+    mt: ['0px', '0px', '0px', '120px', '230px'],
+    ml: ['0px', '0px', '0px', '-320px', '-320px'],
     pointerEvents: 'none',
   },
   sectionSubTitle: {

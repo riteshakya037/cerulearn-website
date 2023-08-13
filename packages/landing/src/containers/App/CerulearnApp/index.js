@@ -10,8 +10,7 @@ import Card from 'common/components/Card';
 import NextImage from 'common/components/NextImage';
 import FeatureBlock from 'common/components/FeatureBlock';
 import Container from 'common/components/UI/Container';
-import ImageOne from 'common/assets/image/app/info1.png';
-import ImageTwo from 'common/assets/image/app/info2.png';
+import ImageOne from 'common/assets/image/app/app-webinar.svg';
 
 const CerulearnApp = ({
   sectionWrapper,
@@ -26,7 +25,6 @@ const CerulearnApp = ({
   imageAreaRow,
   imageWrapper,
   imageWrapperOne,
-  imageWrapperTwo,
   sectionSubTitle,
   btnStyle,
 }) => {
@@ -38,11 +36,6 @@ const CerulearnApp = ({
             <Card {...imageWrapper} {...imageWrapperOne}>
               <Fade left>
                 <NextImage src={ImageOne} alt="Info Image One" />
-              </Fade>
-            </Card>
-            <Card {...imageWrapper} {...imageWrapperTwo}>
-              <Fade bottom>
-                <NextImage src={ImageTwo} alt="Info Image Two" />
               </Fade>
             </Card>
           </Box>
@@ -120,12 +113,6 @@ CerulearnApp.defaultProps = {
     boxShadow: 'none',
   },
   imageWrapperOne: {
-    pointerEvents: 'none',
-  },
-  imageWrapperTwo: {
-    alignSelf: 'flex-end',
-    mb: '-60px',
-    ml: ['0px', '0px', '-200px', '-250px', '-400px'],
     pointerEvents: 'none',
   },
   sectionSubTitle: {

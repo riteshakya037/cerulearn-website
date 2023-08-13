@@ -9,7 +9,7 @@ import Button from 'common/components/Button';
 import Image from 'common/components/Image';
 import ContactFormWrapper from './contactForm.style';
 import 'rc-tabs/assets/index.css';
-import LoginImage from 'common/assets/image/app/login-bg.jpg';
+import LoginImage from 'common/assets/image/app/contact-us.svg';
 import { withPromiseHandler } from 'containers/App/PromiseHandler'
 import { ContactUsService } from 'services/contact'
 

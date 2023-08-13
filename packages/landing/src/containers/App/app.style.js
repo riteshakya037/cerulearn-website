@@ -861,12 +861,6 @@ const AppWrapper = styled.div`
       }
     }
   }
-  .cardExtraImage {
-    @media screen and (max-width: 1440px) and (min-width: 1100px) {
-      margin-left: -270px;
-      margin-top: 50px;
-    }
-  }
   .lds-dual-ring {
     display: inline-block;
     width: 80px;
