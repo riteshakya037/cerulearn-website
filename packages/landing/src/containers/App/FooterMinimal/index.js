@@ -37,13 +37,15 @@ const Footer = () => {
             </Link>
           </CopyText>
         </Left>
-        <Menu>
-          {menu.map(({ link, label }, index) => (
-            <Link href={link} key={`footer-link-key-${index}`}>
-              <a>{label}</a>
-            </Link>
-          ))}
-        </Menu>
+        <CopyText>
+          <Menu>
+            {menu.map(({ link, label }, index) => (
+              <Link href={link} key={`footer-link-key-${index}`}>
+                <a>{label}</a>
+              </Link>
+            ))}
+          </Menu>
+        </CopyText>
         <Social>
           <SocialText>Social:</SocialText>
           {social.map(({ link, icon }, index) => (

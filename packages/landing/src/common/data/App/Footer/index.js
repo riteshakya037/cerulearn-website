@@ -130,12 +130,12 @@ const data = {
   ],
   menu: [
     {
-      link: '/support',
-      label: 'Support',
+      link: '/terms',
+      label: 'Terms',
     },
     {
       link: 'mailto:support@ceruai.com',
-      label: 'Terms',
+      label: 'Support',
     },
     {
       link: '/privacy',
@@ -149,23 +149,23 @@ const data = {
   logo: footerLogo,
   social: [
     {
-      link: '#',
+      link: 'https://www.facebook.com/ceru.learn',
       icon: footerFacebook,
     },
     {
-      link: '#',
+      link: 'https://www.instagram.com/ceru.learn',
       icon: footerInstagram,
     },
     {
-      link: '#',
+      link: 'https://www.tiktok.com/@ceru.learn',
       icon: footerTiktok,
     },
     {
-      link: '#',
+      link: 'https://twitter.com/CerulearnApp',
       icon: footerTwitter,
     },
     {
-      link: '#',
+      link: 'https://www.linkedin.com/company/ceru.learn/',
       icon: footerLinkedIn,
     },
   ],
