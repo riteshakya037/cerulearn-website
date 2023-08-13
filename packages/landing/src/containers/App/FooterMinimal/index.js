@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import NextImage from 'common/components/NextImage';
 import Logo from 'common/components/UIElements/Logo';
@@ -17,8 +17,14 @@ const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
 
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setCount(count + 1)
+  }, []);
+
   return (
-    <FooterArea>
+    <FooterArea key={'footer' + count}>
       <Container className="Container">
         <Left>
           <Logo
@@ -60,5 +66,6 @@ const Footer = () => {
     </FooterArea>
   );
 };
+
 
 export default Footer;
