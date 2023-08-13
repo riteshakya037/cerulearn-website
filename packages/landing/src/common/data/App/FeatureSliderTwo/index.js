@@ -20,19 +20,18 @@ const data = {
     {
       id: 3,
       image: Icon3,
-      title: 'Personalized Tutoring',
+      title: 'Tutor Personas',
     },
 
     {
       id: 4,
       image: Icon4,
-      title: 'Tutor Personas',
+      title: 'Personalized Tutoring',
     },
-
     {
       id: 5,
       image: Icon5,
-      title: 'Personalized Tutoring',
+      title: 'Mind Mapping',
     },
 
     {

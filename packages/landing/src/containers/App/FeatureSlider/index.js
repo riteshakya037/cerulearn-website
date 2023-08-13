@@ -4,66 +4,11 @@ import ImageGallery from 'react-image-gallery';
 import Box from 'common/components/Box';
 import Text from 'common/components/Text';
 import Heading from 'common/components/Heading';
+import data from 'common/data/App/FeatureSliderTwo';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import Container from 'common/components/UI/Container';
 import FeatureSliderWrapper from './featureSlider.style';
 import Image1 from 'common/assets/image/app/slide-2.png';
-import Image2 from 'common/assets/image/app/slide-1.png';
-import Image3 from 'common/assets/image/app/slide-3.png';
-import Image4 from 'common/assets/image/app/slide-4.png';
-import Image5 from 'common/assets/image/app/slide-5.png';
-import Thumb1 from 'common/assets/image/app/6.svg';
-import Thumb2 from 'common/assets/image/app/1.svg';
-import Thumb3 from 'common/assets/image/app/2.svg';
-import Thumb4 from 'common/assets/image/app/3.svg';
-import Thumb5 from 'common/assets/image/app/4.svg';
-import Thumb6 from 'common/assets/image/app/5.svg';
-
-// import DomainSection from '../container/Hosting/Domain';
-const images = [
-  {
-    original: `${Image1?.src}`,
-    thumbnail: `${Thumb1?.src}`,
-    thumbnailLabel: 'AI Integrations',
-    originalAlt: 'slide one',
-    thumbnailAlt: 'thumb one',
-  },
-  {
-    original: `${Image2?.src}`,
-    thumbnail: `${Thumb2?.src}`,
-    thumbnailLabel: 'Events and Newsfeeds',
-    originalAlt: 'slide two',
-    thumbnailAlt: 'thumb two',
-  },
-  {
-    original: `${Image3?.src}`,
-    thumbnail: `${Thumb3?.src}`,
-    thumbnailLabel: 'Personalized Tutoring',
-    originalAlt: 'slide three',
-    thumbnailAlt: 'thumb three',
-  },
-  {
-    original: `${Image2?.src}`,
-    thumbnail: `${Thumb4?.src}`,
-    thumbnailLabel: 'Tutor Personas',
-    originalAlt: 'slide four',
-    thumbnailAlt: 'thumb four',
-  },
-  {
-    original: `${Image4?.src}`,
-    thumbnail: `${Thumb5?.src}`,
-    thumbnailLabel: 'Personalized Tutoring',
-    originalAlt: 'slide five',
-    thumbnailAlt: 'thumb five',
-  },
-  {
-    original: `${Image5?.src}`,
-    thumbnail: `${Thumb6?.src}`,
-    thumbnailLabel: 'Interactive Whiteboard',
-    originalAlt: 'slide six',
-    thumbnailAlt: 'thumb six',
-  },
-];
 
 const FeatureSlider = ({ sectionSubTitle, sectionTitle, sectionHeader }) => {
   return (
@@ -80,7 +25,15 @@ const FeatureSlider = ({ sectionSubTitle, sectionTitle, sectionHeader }) => {
         </Box>
         <Box className="FeatureSlider">
           <ImageGallery
-            items={images}
+            items={data.features.map((item) => {
+              return {
+                original: `${Image1?.src}`,
+                thumbnail: item.image.src,
+                thumbnailLabel: item.title,
+                originalAlt: item.title,
+                thumbnailAlt: item.title,
+              }
+            })}
             className="Slider-img"
             showPlayButton={false}
             showFullscreenButton={false}

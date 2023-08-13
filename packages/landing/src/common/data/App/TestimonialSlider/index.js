@@ -26,17 +26,17 @@ const data = {
     {
       id: 4,
       description:
-        'Cerulearn\'s Cerulytics Dashboard optimizes marketing and engagement. The app keeps students and parents informed.',
-      name: 'Poonam Majhi',
-      designation: 'Project Coordinator @ Malpi City School',
+        'Cerulearn\'s Cerulytics Dashboard optimizes marketing and engagement. The app\'s integration with our academic calendar and news feed feature keeps students and parents well-informed. ',
+      name: 'Micheal Munstock',
+      designation: 'Global Product and Marketing Manager @ AIBTGlobal',
     },
 
     {
       id: 5,
       description:
         'Cerulearn\'s AI integration and expert tutors provide impactful learning experiences. It\'s a groundbreaking tool.',
-      name: 'Sujata Bantawa',
-      designation: 'Trainer @ AKLTG ',
+      name: 'Ritesh Shakya',
+      designation: 'Trainer @ arcab INC.',
     },
   ],
 };

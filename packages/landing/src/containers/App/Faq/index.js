@@ -97,7 +97,7 @@ Faq.defaultProps = {
     fontWeight: '400',
     color: '#0f2137',
     letterSpacing: '-0.025em',
-    mb: '0',
+    mb: '20px',
   },
   faqTitle: {
     fontSize: ['18px', '20px'],

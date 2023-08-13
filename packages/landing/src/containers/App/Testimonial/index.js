@@ -9,8 +9,8 @@ import SliderDes from '../sliderDescription';
 import Image1 from 'common/assets/image/app/test-student.jpeg';
 import Image2 from 'common/assets/image/app/test-teacher.png';
 import Image3 from 'common/assets/image/app/test-parent.jpeg';
-import Image4 from 'common/assets/image/app/test-institution.jpeg';
-import Image5 from 'common/assets/image/app/test-professional.jpeg';
+import Image4 from 'common/assets/image/app/test-institution.png';
+import Image5 from 'common/assets/image/app/test-professional.jpg';
 
 const images = [
   {
@@ -28,16 +28,16 @@ const images = [
     thumbnailAlt: 'thumb three',
     description: <SliderDes data={data.testimonials[2]} />,
   },
-  // {
-  //   thumbnail: `${Image4?.src}`,
-  //   thumbnailAlt: 'thumb four',
-  //   description: <SliderDes data={data.testimonials[3]} />,
-  // },
-  // {
-  //   thumbnail: `${Image5?.src}`,
-  //   thumbnailAlt: 'thumb five',
-  //   description: <SliderDes data={data.testimonials[4]} />,
-  // },
+  {
+    thumbnail: `${Image5?.src}`,
+    thumbnailAlt: 'thumb five',
+    description: <SliderDes data={data.testimonials[4]} />,
+  },
+  {
+    thumbnail: `${Image4?.src}`,
+    thumbnailAlt: 'thumb four',
+    description: <SliderDes data={data.testimonials[3]} />,
+  },
 ];
 
 const TestimonialSection = ({ sectionWrapper, row, sectionSubTitle }) => {

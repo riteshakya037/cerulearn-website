@@ -103,7 +103,7 @@ CerulyticsDashboard.propTypes = {
 CerulyticsDashboard.defaultProps = {
   sectionWrapper: {
     as: 'section',
-    pt: ['20px', '40px', '40px', '80px', '80px'],
+    pt: ['20px', '40px', '40px', '280px', '480px'],
     pb: ['80px', '80px', '80px', '180px', '280px'],
   },
   row: {

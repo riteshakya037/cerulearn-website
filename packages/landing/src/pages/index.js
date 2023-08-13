@@ -14,7 +14,7 @@ import DomainSection from 'containers/App/Banner';
 import FeatureSection from 'containers/App/FeatureSection';
 import CerulearnApp from 'containers/App/CerulearnApp';
 import TestimonialSection from 'containers/App/Testimonial';
-import PartnerHistory from 'containers/App/PartnerHistory';
+import CerulyticsFeature from 'containers/App/CerulyticsFeature';
 import CerulyticsDashboard from 'containers/App/CerulyticsDashboard';
 import Footer from 'containers/App/FooterMinimal';
 import CallToAction from 'containers/App/CallToAction';
@@ -53,8 +53,8 @@ const App = ({ size }) => {
           <ConditionWrapper id="keyfeature">
             {size.innerWidth > 1100 ? <FeatureSlider /> : <FeatureSliderTwo />}
           </ConditionWrapper>
-          <PartnerHistory />
           <CerulyticsDashboard />
+          {/* <CerulyticsFeature /> */}
           <TestimonialSection />
           <Faq />
           <CallToAction />
