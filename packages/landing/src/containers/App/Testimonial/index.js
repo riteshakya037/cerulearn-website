@@ -6,11 +6,11 @@ import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import data from 'common/data/App/TestimonialSlider';
 import SliderDes from '../sliderDescription';
-import Image1 from 'common/assets/image/app/6.png';
-import Image2 from 'common/assets/image/app/2.jpg';
-import Image3 from 'common/assets/image/app/5.jpg';
-import Image4 from 'common/assets/image/app/testi.jpg';
-import Image5 from 'common/assets/image/app/1.jpeg';
+import Image1 from 'common/assets/image/app/test-student.jpeg';
+import Image2 from 'common/assets/image/app/test-teacher.png';
+import Image3 from 'common/assets/image/app/test-parent.jpeg';
+import Image4 from 'common/assets/image/app/test-institution.jpeg';
+import Image5 from 'common/assets/image/app/test-professional.jpeg';
 
 const images = [
   {
@@ -28,16 +28,16 @@ const images = [
     thumbnailAlt: 'thumb three',
     description: <SliderDes data={data.testimonials[2]} />,
   },
-  {
-    thumbnail: `${Image4?.src}`,
-    thumbnailAlt: 'thumb four',
-    description: <SliderDes data={data.testimonials[3]} />,
-  },
-  {
-    thumbnail: `${Image5?.src}`,
-    thumbnailAlt: 'thumb five',
-    description: <SliderDes data={data.testimonials[4]} />,
-  },
+  // {
+  //   thumbnail: `${Image4?.src}`,
+  //   thumbnailAlt: 'thumb four',
+  //   description: <SliderDes data={data.testimonials[3]} />,
+  // },
+  // {
+  //   thumbnail: `${Image5?.src}`,
+  //   thumbnailAlt: 'thumb five',
+  //   description: <SliderDes data={data.testimonials[4]} />,
+  // },
 ];
 
 const TestimonialSection = ({ sectionWrapper, row, sectionSubTitle }) => {
@@ -51,10 +51,9 @@ const TestimonialSection = ({ sectionWrapper, row, sectionSubTitle }) => {
         <Box className="testimonialDesWrapper">
           <ImageGallery
             items={images}
-            originalClass="Testimonial-img"
             showPlayButton={false}
             showFullscreenButton={false}
-            // showNav={false}
+            showNav={false}
           />
         </Box>
       </Container>
