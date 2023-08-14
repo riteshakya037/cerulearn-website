@@ -41,34 +41,41 @@ const DomainSection = ({
   title,
   description,
   image,
+  textArea,
   imageArea,
   discountAmount,
   discountText,
   promiseStatus,
   handlePromise
 }) => {
-  const { sectionImage, screenImage, tagLine, buttons } =
-    BANNER_DATA
+  const { tagLine, buttons } = BANNER_DATA
   const [email, setEmail] = useState(''); // Initialize email state
+  const [count, setCount] = useState(0);
 
-  const handleSubscribe = (email) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     handlePromise(email);
   };
 
   useEffect(() => {
     if (promiseStatus == "success") {
-      setEmail("")
+      resetFields();
     }
   }, [promiseStatus]);
+
+  const resetFields = () => {
+    setCount(count + 1);
+    setEmail('');
+  }
 
   return (
     <Box {...SectionWrapper}>
       <ParticlesComponent />
       <BannerSquareShape />
       <BannerCircleShape />
-      <Container>
+      <Container >
         <Box {...row}>
-          <Box {...col}>
+          <Box {...col} {...textArea}>
             <Box>
               <DiscountWrapper>
                 <DiscountLabel>
@@ -81,28 +88,31 @@ const DomainSection = ({
               title={<Heading {...title} />}
               description={<Text {...description} />}
             />
-            <EmailWrapper>
-              <input
-                type='text'
-                id="emailInput"
-                placeholder='Enter Email address..'
-                className='input-email'
-                value={email}
-                disabled={promiseStatus === 'pending'}
-                onChange={(e) => setEmail(e.target.value)} // Update email state on change
-              />
-              <button className='input-button'
-                disabled={promiseStatus === 'pending'}
-                onClick={() => handleSubscribe(email)}
-              >
-                {promiseStatus === 'pending' ? (
-                  <div className="lds-dual-ring">
-                  </div>
-                ) : (
-                  <img src={arrowIcon?.src} alt='banner button' />
-                )}
-              </button>
-            </EmailWrapper>
+            <form key={'contact-form' + count} onSubmit={handleSubmit}>
+              <EmailWrapper>
+                <input
+                  type='email'
+                  id="emailInput"
+                  placeholder='Enter Email address..'
+                  className='input-email'
+                  required
+                  value={email}
+                  disabled={promiseStatus === 'pending'}
+                  onChange={(e) => setEmail(e.target.value)} // Update email state on change
+                />
+                <button className='input-button'
+                  disabled={promiseStatus === 'pending'}
+                  type="submit"
+                >
+                  {promiseStatus === 'pending' ? (
+                    <div className="lds-dual-ring">
+                    </div>
+                  ) : (
+                    <img src={arrowIcon?.src} alt='banner button' />
+                  )}
+                </button>
+              </EmailWrapper>
+            </form>
             <Text as='p' className='tagLine' content={tagLine} />
             <DownloadButtonWrapper>
               {buttons.map((button, index) => (
@@ -157,7 +167,7 @@ DomainSection.propTypes = {
 DomainSection.defaultProps = {
   SectionWrapper: {
     as: 'section',
-    pt: '40px',
+    pt: ['0px', '40px', '40px', '40px', '0px'],
     pb: '40px',
     overflow: 'hidden',
   },
@@ -179,6 +189,7 @@ DomainSection.defaultProps = {
   },
   imageArea: {
     width: ['0%', '0%', '43%', '35%', '40%'],
+    pt: '40px',
     ml: 'auto',
   },
   title: {
@@ -204,7 +215,7 @@ DomainSection.defaultProps = {
     width: ['100%', '100%', '50%', '55%', '55%'],
   },
   discountAmount: {
-    content: 'update',
+    content: 'What\'s New',
     fontSize: '14px',
     fontWeight: '600',
     color: '#fff',

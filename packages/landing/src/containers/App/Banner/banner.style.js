@@ -86,11 +86,7 @@ export const EmailWrapper = styled.section`
     transition: all 500ms ease;
     @media (max-width: 1550px) {
       height: 60px;
-      max-width: 430px;
       padding-right: 70px;
-    }
-    @media (max-width: 1199px) {
-      max-width: 400px;
     }
     &::placeholder {
       color: #343d48;
