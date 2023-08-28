@@ -8,7 +8,6 @@ import data from 'common/data/App/FeatureSliderTwo';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import Container from 'common/components/UI/Container';
 import FeatureSliderWrapper from './featureSlider.style';
-import Image1 from 'common/assets/image/app/slide-2.png';
 
 const FeatureSlider = ({ sectionSubTitle, sectionTitle, sectionHeader }) => {
   return (
@@ -27,7 +26,7 @@ const FeatureSlider = ({ sectionSubTitle, sectionTitle, sectionHeader }) => {
           <ImageGallery
             items={data.features.map((item) => {
               return {
-                original: `${Image1?.src}`,
+                original: item.screenshot.src,
                 thumbnail: item.image.src,
                 thumbnailLabel: item.title,
                 originalAlt: item.title,

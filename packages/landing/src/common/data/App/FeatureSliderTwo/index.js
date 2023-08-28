@@ -1,43 +1,57 @@
-import Icon1 from '../../../assets/image/app/6.svg';
-import Icon2 from '../../../assets/image/app/1.svg';
-import Icon3 from '../../../assets/image/app/2.svg';
-import Icon4 from '../../../assets/image/app/3.svg';
-import Icon5 from '../../../assets/image/app/4.svg';
-import Icon6 from '../../../assets/image/app/5.svg';
+import Icon1 from '../../../assets/image/app/1.svg';
+import Icon2 from '../../../assets/image/app/2.svg';
+import Icon3 from '../../../assets/image/app/3.svg';
+import Icon4 from '../../../assets/image/app/4.svg';
+import Icon5 from '../../../assets/image/app/5.svg';
+import Icon6 from '../../../assets/image/app/6.svg';
+
+import Screenshot1 from '../../../assets/image/app/slide-1.png';
+import Screenshot2 from '../../../assets/image/app/slide-2.png';
+import Screenshot3 from '../../../assets/image/app/slide-3.png';
+import Screenshot4 from '../../../assets/image/app/slide-4.png';
+import Screenshot5 from '../../../assets/image/app/slide-5.png';
+import Screenshot6 from '../../../assets/image/app/slide-6.png';
 
 const data = {
   features: [
     {
       id: 1,
       image: Icon1,
-      title: 'AI Integrations',
+      screenshot: Screenshot1,
+      title: 'Events and Newsfeeds',
     },
     {
       id: 2,
       image: Icon2,
-      title: 'Events and Newsfeeds',
-    },
-    {
-      id: 3,
-      image: Icon3,
+      screenshot: Screenshot2,
       title: 'Tutor Personas',
     },
 
     {
-      id: 4,
-      image: Icon4,
+      id: 3,
+      image: Icon3,
+      screenshot: Screenshot3,
       title: 'Personalized Tutoring',
     },
     {
+      id: 4,
+      image: Icon4,
+      screenshot: Screenshot4,
+      title: 'Mind Mapping',
+    },
+
+    {
       id: 5,
       image: Icon5,
-      title: 'Mind Mapping',
+      screenshot: Screenshot5,
+      title: 'Interactive Whiteboard',
     },
 
     {
       id: 6,
       image: Icon6,
-      title: 'Interactive Whiteboard',
+      screenshot: Screenshot6,
+      title: 'AI Integrations',
     },
   ],
 };
