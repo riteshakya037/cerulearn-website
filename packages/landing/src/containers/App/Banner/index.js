@@ -116,28 +116,30 @@ const DomainSection = ({
             <Text as='p' className='tagLine' content={tagLine} />
             <DownloadButtonWrapper>
               {buttons.map((button, index) => (
-                <Link href='/' key={`banner-button-${index}`}>
-                  <section className='download-button'>
-                    <img
-                      src={button?.icon?.src}
-                      width='30'
-                      height='30'
-                      alt={button?.title}
-                      className='download-button-icon'
-                    />
-                    <Box className='download-button-content'>
-                      <Text
-                        as='span'
-                        content={button?.text}
-                        className='download-button-content-text'
+                <Link href={button.link} key={`banner-button-${index}`} passHref>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <section className='download-button'>
+                      <img
+                        src={button?.icon?.src}
+                        width='30'
+                        height='30'
+                        alt={button?.title}
+                        className='download-button-icon'
                       />
-                      <Text
-                        as='p'
-                        content={button?.title}
-                        className='download-button-content-title'
-                      />
-                    </Box>
-                  </section>
+                      <Box className='download-button-content'>
+                        <Text
+                          as='span'
+                          content={button?.text}
+                          className='download-button-content-text'
+                        />
+                        <Text
+                          as='p'
+                          content={button?.title}
+                          className='download-button-content-title'
+                        />
+                      </Box>
+                    </section>
+                  </a>
                 </Link>
               ))}
             </DownloadButtonWrapper>

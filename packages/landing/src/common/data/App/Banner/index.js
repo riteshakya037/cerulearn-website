@@ -13,13 +13,13 @@ export const BANNER_DATA = {
             icon: bannerBtn1,
             title: 'App Store',
             text: 'Download on the',
-            link: '#',
+            link: 'https://apps.apple.com/us/app/cerulearn/id6462989768',
         },
         {
             icon: bannerBtn2,
             title: 'Google Play',
             text: 'Download on the',
-            link: '#',
+            link: 'https://play.google.com/store/apps/details?id=com.ceruai.cerulearn',
         },
     ],
 }
