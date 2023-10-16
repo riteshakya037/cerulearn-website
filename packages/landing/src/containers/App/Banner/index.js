@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Box from 'common/components/Box';
 import Text from 'common/components/Text';
+import Button from 'common/components/Button';
 import Heading from 'common/components/Heading';
 import NextImage from 'common/components/NextImage';
 import FeatureBlock from 'common/components/FeatureBlock';
@@ -14,13 +15,14 @@ import {
   DiscountWrapper,
   DiscountLabel,
   DownloadButtonWrapper,
+  ButtonWrapper,
   EmailWrapper,
 } from './banner.style';
 import { BANNER_DATA } from 'common/data/App/Banner'
 import AppScreenshot from 'common/assets/image/app/mobile.png';
 import { withPromiseHandler } from 'containers/App/PromiseHandler'
 import { NewsletterSubscriptionService } from 'services/newsletter'
-
+import { SHOW_FOR_RELEAE } from 'common/constants';
 const service = new NewsletterSubscriptionService();
 
 const subscribeToNewsletter = async (email) => {
@@ -43,8 +45,10 @@ const DomainSection = ({
   image,
   textArea,
   imageArea,
-  discountAmount,
-  discountText,
+  updateTitle,
+  button,
+  btnStyle,
+  updateText,
   promiseStatus,
   handlePromise
 }) => {
@@ -79,8 +83,8 @@ const DomainSection = ({
             <Box>
               <DiscountWrapper>
                 <DiscountLabel>
-                  <Text {...discountAmount} className="discountAmount" />
-                  <Text {...discountText} />
+                  <Text {...updateTitle} className="discountAmount" />
+                  <Text {...updateText} />
                 </DiscountLabel>
               </DiscountWrapper>
             </Box>
@@ -88,61 +92,71 @@ const DomainSection = ({
               title={<Heading {...title} />}
               description={<Text {...description} />}
             />
-            <form key={'contact-form' + count} onSubmit={handleSubmit}>
-              <EmailWrapper>
-                <input
-                  type='email'
-                  id="emailInput"
-                  placeholder='Enter Email address..'
-                  className='input-email'
-                  required
-                  value={email}
-                  disabled={promiseStatus === 'pending'}
-                  onChange={(e) => setEmail(e.target.value)} // Update email state on change
-                />
-                <button className='input-button'
-                  disabled={promiseStatus === 'pending'}
-                  type="submit"
-                >
-                  {promiseStatus === 'pending' ? (
-                    <div className="lds-dual-ring">
-                    </div>
-                  ) : (
-                    <img src={arrowIcon?.src} alt='banner button' />
-                  )}
-                </button>
-              </EmailWrapper>
-            </form>
-            <Text as='p' className='tagLine' content={tagLine} />
-            <DownloadButtonWrapper>
-              {buttons.map((button, index) => (
-                <Link href={button.link} key={`banner-button-${index}`} passHref>
-                  <a target="_blank" rel="noopener noreferrer">
-                    <section className='download-button'>
-                      <img
-                        src={button?.icon?.src}
-                        width='30'
-                        height='30'
-                        alt={button?.title}
-                        className='download-button-icon'
-                      />
-                      <Box className='download-button-content'>
-                        <Text
-                          as='span'
-                          content={button?.text}
-                          className='download-button-content-text'
-                        />
-                        <Text
-                          as='p'
-                          content={button?.title}
-                          className='download-button-content-title'
-                        />
-                      </Box>
-                    </section>
+            {SHOW_FOR_RELEAE ?
+              <form key={'contact-form' + count} onSubmit={handleSubmit}>
+                <EmailWrapper>
+                  <input
+                    type='email'
+                    id="emailInput"
+                    placeholder='Enter Email address..'
+                    className='input-email'
+                    required
+                    value={email}
+                    disabled={promiseStatus === 'pending'}
+                    onChange={(e) => setEmail(e.target.value)} // Update email state on change
+                  />
+                  <button className='input-button'
+                    disabled={promiseStatus === 'pending'}
+                    type="submit"
+                  >
+                    {promiseStatus === 'pending' ? (
+                      <div className="lds-dual-ring">
+                      </div>
+                    ) : (
+                      <img src={arrowIcon?.src} alt='banner button' />
+                    )}
+                  </button>
+                </EmailWrapper>
+              </form> : <ButtonWrapper>
+                <Link href="/preregister">
+                  <a>
+                    <Button title="Pre-Register Now" {...button} {...btnStyle} />
                   </a>
                 </Link>
-              ))}
-            </DownloadButtonWrapper>
+              </ButtonWrapper>
+            }
+            {SHOW_FOR_RELEAE && <>
+              <Text as='p' className='tagLine' content={tagLine} />
+              <DownloadButtonWrapper>
+                {buttons.map((button, index) => (
+                  <Link href={button.link} key={`banner-button-${index}`} passHref>
+                    <a target="_blank" rel="noopener noreferrer">
+                      <section className='download-button'>
+                        <img
+                          src={button?.icon?.src}
+                          width='30'
+                          height='30'
+                          alt={button?.title}
+                          className='download-button-icon'
+                        />
+                        <Box className='download-button-content'>
+                          <Text
+                            as='span'
+                            content={button?.text}
+                            className='download-button-content-text'
+                          />
+                          <Text
+                            as='p'
+                            content={button?.title}
+                            className='download-button-content-title'
+                          />
+                        </Box>
+                      </section>
+                    </a>
+                  </Link>
+                ))}
+              </DownloadButtonWrapper>
+            </>}
           </Box>
           <Box {...col} {...imageArea}>
             <NextImage src={AppScreenshot} alt="Domain Image" {...image} />
@@ -162,8 +176,10 @@ DomainSection.propTypes = {
   button: PropTypes.object,
   btnStyle: PropTypes.object,
   btnStyleTwo: PropTypes.object,
-  discountAmount: PropTypes.object,
-  discountText: PropTypes.object,
+  updateTitle: PropTypes.object,
+  updateText: PropTypes.object,
+  button: PropTypes.object,
+  btnStyle: PropTypes.object,
 };
 
 DomainSection.defaultProps = {
@@ -216,8 +232,8 @@ DomainSection.defaultProps = {
   textArea: {
     width: ['100%', '100%', '50%', '55%', '55%'],
   },
-  discountAmount: {
-    content: 'What\'s New',
+  updateTitle: {
+    content: BANNER_DATA.updateTitle,
     fontSize: '14px',
     fontWeight: '600',
     color: '#fff',
@@ -226,14 +242,29 @@ DomainSection.defaultProps = {
     mr: '0.4em',
     bg: 'rgb(26, 115, 232)',
   },
-  discountText: {
-    content: BANNER_DATA.update,
+  updateText: {
+    content: BANNER_DATA.updateText,
     fontSize: '13px',
     fontWeight: '400',
     color: '#0f2137',
     mb: 0,
     as: 'span',
     ml: '10px',
+  },
+  button: {
+    type: 'button',
+    fontSize: '14px',
+    fontWeight: '600',
+    color: '#fff',
+    borderRadius: '4px',
+    pl: '22px',
+    pr: '22px',
+    colors: 'primaryWithBg',
+  },
+  btnStyle: {
+    minWidth: '156px',
+    fontSize: '14px',
+    fontWeight: '500',
   },
 };
 

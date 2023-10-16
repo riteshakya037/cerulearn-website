@@ -12,6 +12,7 @@ import SearchPanel from '../SearchPanel';
 import LoginModal from '../LoginModal';
 import Link from 'next/link';
 import { withInnerWidth } from 'common/contexts/SizeContext'
+import { SHOW_FOR_RELEAE } from 'common/constants';
 
 import LogoImage from 'common/assets/image/app/logo.svg';
 import LogoTextImage from 'common/assets/image/app/logo_text.svg';
@@ -109,15 +110,17 @@ const Navbar = ({ navbarStyle, logoStyle, showIcons, size }) => {
           logoStyle={logoStyle}
         />
         {showIcons && <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Link href="https://app.ceruai.com" >
-            <a target="_blank" rel="noopener noreferrer">
-              <Button
-                variant="textButton"
-                icon={<i className="flaticon-user" />}
-                aria-label="login"
-              />
-            </a>
-          </Link>
+          {SHOW_FOR_RELEAE &&
+            <Link href="https://app.ceruai.com" >
+              <a target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="textButton"
+                  icon={<i className="flaticon-user" />}
+                  aria-label="login"
+                />
+              </a>
+            </Link>
+          }
           <Drawer
             width="420px"
             placement="right"

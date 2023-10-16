@@ -16,14 +16,9 @@ const data = {
       "offset": "-100"
     },
     {
-      "label": "Partners",
-      "path": "#partners",
-      "offset": "-100"
-    },
-    {
       "label": "Cerulytics Dashboard",
       "path": "#cerulytics_dashboard",
-      "offset": "100"
+      "offset": "-140"
     },
     {
       "label": "Customer Opinions",

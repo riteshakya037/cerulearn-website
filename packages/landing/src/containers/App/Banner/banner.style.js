@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import Mail from 'common/assets/image/app/mail.svg';
+import { themeGet } from '@styled-system/theme-get';
 
 export const DiscountWrapper = styled.div`
   text-align: left;
 `;
 export const ButtonWrapper = styled.div`
   position: relative;
+  margin-top: 40px;
   @media screen and (max-width: 991px) and (min-width: 767px) {
     display: flex;
     .reusecore__button {
@@ -235,3 +237,31 @@ export const DownloadButtonWrapper = styled.section`
     }
   }
 `
+
+export const ButtonWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+  button {
+    background-color: #fff;
+    color: ${themeGet('colors.primaryLight', '#1A73E8')};
+    margin: 15px 0;
+    font-size: 20px;
+    line-height: 1.2em;
+    font-weight: 700;
+    border-radius: 7px;
+    padding: 22px 45px;
+    @media only screen and (max-width: 991px) {
+      font-size: 18px;
+      padding: 16px 25px;
+    }
+    @media only screen and (max-width: 768px) {
+      margin: 25px 0 10px;
+    }
+    &:hover {
+      color: white;
+      box-shadow: 0px 9px 20px -5px rgba(108, 36, 126, 0.57);
+    }
+  }
+`;

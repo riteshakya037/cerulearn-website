@@ -123,7 +123,7 @@ const Input = ({
             {...props}
             id={htmlFor}
             name={htmlFor}
-            type={state.toggle ? 'password' : 'text'}
+            type={state.toggle ? 'password' : inputType ?? 'text'}
             value={state.value}
             onChange={handleOnChange}
             onBlur={handleOnBlur}
