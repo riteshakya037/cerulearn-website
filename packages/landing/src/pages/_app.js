@@ -14,7 +14,7 @@ export default function CustomApp({ Component, pageProps }) {
     <>
       <Script
         strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=$G-Y2EXFZN5YE`}
       />
 
       <Script strategy="lazyOnload">
@@ -22,7 +22,7 @@ export default function CustomApp({ Component, pageProps }) {
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', '${process.env.GOOGLE_ANALYTICS}', {
+                  gtag('config', 'G-Y2EXFZN5YE', {
                   page_path: window.location.pathname,
                   });
               `}
