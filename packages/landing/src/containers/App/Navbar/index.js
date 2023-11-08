@@ -92,12 +92,6 @@ const Navbar = ({ navbarStyle, logoStyle, showIcons, size }) => {
   };
 
   const isMobile = size.innerWidth < 480;
-  console.log(data.menuItems.map((item) => {
-    if (isMobile) {
-      delete item.offset;
-    }
-    return item;
-  }))
 
   return (
     <NavbarWrapper {...navbarStyle}>

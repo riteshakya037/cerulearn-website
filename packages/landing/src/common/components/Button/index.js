@@ -53,7 +53,7 @@ const Button = ({
       type={type}
       className={addAllClasses.join(' ')}
       icon={icon}
-      disabled={disabled}
+      disabled={!!disabled}
       icon-position={position}
       onClick={onClick}
       {...props}

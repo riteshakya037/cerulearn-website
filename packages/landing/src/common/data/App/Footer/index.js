@@ -157,7 +157,7 @@ const data = {
       icon: footerInstagram,
     },
     {
-      link: 'https://www.tiktok.com/@ceru.learn',
+      link: 'https://www.tiktok.com/@cerulearn',
       icon: footerTiktok,
     },
     {
