@@ -1,4 +1,4 @@
-export const GA_MEASUREMENT_ID = "G-Y2EXFZN5YE";
+export const GA_MEASUREMENT_ID = "G-JD9N8EVTX6";
 
 export const pageview = (url) => {
     window.gtag("config", GA_MEASUREMENT_ID, {
