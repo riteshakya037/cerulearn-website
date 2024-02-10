@@ -117,7 +117,7 @@ const FeatureSliderWrapper = styled.div`
         border-radius: 50px;
       }
       .image-gallery-swipe {
-        padding: 19px 24px 22px 23px;
+        padding: 16px 20px 16px 16px;
         overflow: hidden;
         .image-gallery-slides {
           .image-gallery-slide {

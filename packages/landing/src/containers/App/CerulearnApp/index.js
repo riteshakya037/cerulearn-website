@@ -54,8 +54,8 @@ const CerulearnApp = ({
               }
               description={
                 <Text
-                  content="The Cerulearn app offers a seamless learning experience for students and parents. Access all necessary information for effective learning, from online classes to assignments. Parents can effortlessly stay informed about their child's academic journey. With a user-friendly interface, learning becomes efficient and engaging on-the-go."
-                  {...description}
+                content="Explore the Cerulearn app, designed to revolutionize your learning journey. From interactive learning tools to engaging AI Tutors, Cerulearn offers a diverse range of tools to enhance your learning experience. With real-time quizzes, exciting events, learning becomes immersive and tailored to your needs."
+                {...description}
                 />
               }
               button={

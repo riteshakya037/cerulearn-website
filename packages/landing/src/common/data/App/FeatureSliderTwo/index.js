@@ -24,20 +24,20 @@ const data = {
       id: 2,
       image: Icon2,
       screenshot: Screenshot2,
-      title: 'Tutor Personas',
+      title: 'Instant Tutor Access',
     },
 
     {
       id: 3,
       image: Icon3,
       screenshot: Screenshot3,
-      title: 'Personalized Tutoring',
+      title: 'Engaging Real-Time Quizzes',
     },
     {
       id: 4,
       image: Icon4,
       screenshot: Screenshot4,
-      title: 'Mind Mapping',
+      title: 'Community Resource Sharing',
     },
 
     {

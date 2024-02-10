@@ -16,16 +16,22 @@ export const faq = {
                 'Cerulearn utilizes AI technology to assess your abilities and learning style. Based on this assessment, the app generates custom roadmaps, quizzes, and flashcards tailored to your individual needs, ensuring an efficient and effective learning journey.',
         },
         {
+            id: 14,
+            question: 'What is Instant Tutor Access?',
+            answer:
+                'Instant Tutor Access is a feature that provides immediate assistance whenever you need help with your studies. You can chat with our real tutors for personalized one-on-one tutoring sessions. Additionally, CeruAI is also available 24/7 for instant answers to your questions.',
+        },
+        {
             id: 13,
             question: 'Can I interact with real tutors on Cerulearn?',
             answer:
                 'Yes! Cerulearn provides one-on-one tutoring sessions with expert teachers. Our interactive whiteboard feature enables real-time communication, allowing you to actively participate in your learning process and get instant clarification on your doubts.',
         },
         {
-            id: 14,
-            question: 'What are Tutor Personas?',
+            id: 15,
+            question: 'What is Community Resource Sharing?',
             answer:
-                'Tutor Personas are AI-powered representations of our skilled instructors. You can chat with them to get immediate answers to your questions and receive personalized assistance whenever you need it.',
+                'Community Resource Sharing is a feature that allows users to exchange educational materials, tips, and resources within the Cerulearn platform. It\'s like having a collective pool of knowledge where users can contribute and benefit from each other\'s expertise.',
         },
         {
             id: 18,

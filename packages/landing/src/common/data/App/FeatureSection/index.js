@@ -5,23 +5,25 @@ const data = {
     {
       id: 1,
       icon: 'flaticon-atom',
-      title: 'Personalized Student Progress',
+      title: 'Custom AI-Powered Learning',
       description:
-        'Tailored learning journeys with AI-driven analytics for academic growth and success.',
+      'Chat with AI tutors using your own course materials for personalized learning experiences.',
     },
     {
       id: 2,
       icon: 'flaticon-trophy',
-      title: 'Empowering Teachers',
+      title: 'Emporing Tutors',
       description:
-        'Dynamic teaching experience with interactive whiteboards and AI integration.',
+      'Dynamic teaching experience with interactive whiteboards and AI integration.'
     },
     {
       id: 3,
       icon: 'flaticon-conversation',
-      title: 'Strengthening the Parent-School Partnership',
-      description: 'A powerful app for parents to stay informed and engaged in their child\'s education.',
+      title: 'Interactive Learning Environment',
+      description:
+      'Engage in immersive learning experiences with cutting-edge interactive tools.',
     },
+   
   ],
 };
 export default data;
