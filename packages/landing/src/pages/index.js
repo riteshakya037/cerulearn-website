@@ -29,8 +29,8 @@ const App = ({ size }) => {
     <ThemeProvider theme={appTheme}>
       <>
         <Head>
-          <title>Cerulearn | Experience the Future of Education</title>
-          <meta name="Description" content="Cerulearn - Your Comprehensive Educational Super App with AI-Powered Personalization, Interactive Tutoring, and Seamless Institution Integration. Revolutionizing Education for Students, Teachers, and Parents." />
+          <title>Cerulearn | Experience the Future of Online Education</title>
+          <meta name="description" content="Cerulearn - Your Comprehensive Online Educational Super App with AI-Powered Personalization, Interactive Tutoring, and Seamless Institution Integration. Revolutionizing Online Education for Students, Teachers, and Parents." />
           <meta name="theme-color" content="#1A73E8" />
           <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
