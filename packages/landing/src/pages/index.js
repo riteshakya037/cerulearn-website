@@ -32,6 +32,7 @@ const App = ({ size }) => {
           <title>Cerulearn | Experience the Future of Online Education</title>
           <meta name="description" content="Cerulearn - Your Comprehensive Online Education Platform with AI-Powered Personalization. Revolutionizing Online Education for Students, Teachers, and Parents." />
           <meta name="theme-color" content="#1A73E8" />
+          <meta name="seobility" content="d601a6cf540d72e29aef060d3f6dcd6d"/>
           <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
             rel="stylesheet"
