@@ -6,7 +6,7 @@ import bannerBtn2 from 'common/assets/image/app/banner-google-play.svg'
 export const BANNER_DATA = {
     updateTitle: 'What\'s New',
     updateText: 'Version 0.8.1 has just released.',
-    slogan: 'Learn with AI + Best Instructors',
+    slogan: 'Learn with AI + Best Instructors Online',
     title: 'Join us on this journey as we revolutionize the online education industry and expand your horizons in learning.',
     tagLine: 'Apps Available to download on',
     buttons: [
