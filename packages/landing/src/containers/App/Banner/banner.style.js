@@ -4,6 +4,7 @@ import { themeGet } from '@styled-system/theme-get';
 
 export const DiscountWrapper = styled.div`
   text-align: left;
+  white-space: nowrap;
 `;
 export const ButtonWrapper = styled.div`
   position: relative;
@@ -137,6 +138,7 @@ export const EmailWrapper = styled.section`
 export const DiscountLabel = styled.div`
   font-family: 'Open Sans', sans-serif;
   display: inline-block;
+  white-space: nowrap;
   border-radius: 4em;
   padding: 10px 24px 0 6px;
   box-shadow: 0px 7px 25px 0px rgba(22, 53, 76, 0.05);

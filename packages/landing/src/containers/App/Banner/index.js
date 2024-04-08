@@ -23,6 +23,7 @@ import AppScreenshot from 'common/assets/image/app/mobile.png';
 import { withPromiseHandler } from 'containers/App/PromiseHandler'
 import { NewsletterSubscriptionService } from 'services/newsletter'
 import { SHOW_FOR_RELEAE } from 'common/constants';
+
 const service = new NewsletterSubscriptionService();
 
 const subscribeToNewsletter = async (email) => {
@@ -223,6 +224,7 @@ DomainSection.defaultProps = {
     fontSize: '16px',
     color: '#343d48',
     lineHeight: '33px',
+    width: ['100%', '100%', '100%', '80%', '80%'],
     mb: '10px',
   },
   image: {
