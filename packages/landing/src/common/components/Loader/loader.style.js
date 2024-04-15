@@ -7,14 +7,14 @@ import { base } from '../base';
 const LoaderStyle = styled.span`
   /* loader default style */
   display: inline-flex;
-  width: 14px;
-  height: 14px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   overflow: hidden;
   border-width: 2px;
   border-style: solid;
   border-color: ${(props) =>
-    props.loaderColor ? props.loaderColor : '#000000'};
+    props.loaderColor ? props.loaderColor : '#1B72E8'};
   border-top-color: transparent !important;
 
   /* animation goes here */

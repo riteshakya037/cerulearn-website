@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Box from '../Box';
 import Button from '../Button';
 import Loader from '../Loader';
-import Text from '../Text';
 
 const LoadMore = ({
   handleLoadMore,
@@ -93,7 +92,7 @@ const ListGrid = ({
           <>
             {limits.map((index) => (
               <Box width={columnWidth} key={index} {...componentContainerStyle}>
-                {placeholder ? placeholder : <Text content="Loading ..." />}
+                {placeholder ? placeholder : <Loader content="Loading ..." />}
               </Box>
             ))}
           </>
@@ -146,8 +145,10 @@ ListGrid.propTypes = {
 };
 
 ListGrid.defaultProps = {
+  loaderColor: '#1B72E8',
   componentWrapperStyle: {
     flexBox: true,
+    justifyContent: 'center',
     flexWrap: 'wrap',
     mr: '-1rem',
     ml: '-1rem',

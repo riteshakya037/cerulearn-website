@@ -12,9 +12,9 @@ import ResetCSS from 'common/assets/css/style';
 import Navbar from 'containers/App/Navbar';
 import DomainSection from 'containers/App/Banner';
 import FeatureSection from 'containers/App/FeatureSection';
+import EventsSection from 'containers/App/EventsSection';
 import CerulearnApp from 'containers/App/CerulearnApp';
 import TestimonialSection from 'containers/App/Testimonial';
-import CerulyticsFeature from 'containers/App/CerulyticsFeature';
 import CerulyticsDashboard from 'containers/App/CerulyticsDashboard';
 import Footer from 'containers/App/FooterMinimal';
 import CallToAction from 'containers/App/CallToAction';
@@ -49,6 +49,7 @@ const App = ({ size }) => {
             </DrawerProvider>
           </Sticky>
           <DomainSection />
+          <EventsSection />
           <FeatureSection />
           <CerulearnApp />
           <ConditionWrapper id="keyfeature">
